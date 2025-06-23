@@ -1,0 +1,22 @@
+# Virtual Environments
+.venv/
+.venv310/
+.venv311/
+env/
+venv/
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE/Editor
+.idea/
+.vscode/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
