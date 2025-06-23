@@ -1,0 +1,500 @@
+[2025-06-06 10:11:57] [SYSTEM_START] Guardrail System is starting.
+[2025-06-06 10:12:19] [MODEL_LOAD_ERROR] Failed to load model: You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1.
+401 Client Error. (Request ID: Root=1-684271a4-1126b4c06fb2b0ee715de032;380109b4-bea7-4b61-beab-10bae3f91131)
+
+Cannot access gated repo for url https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1/resolve/main/config.json.
+Access to model mistralai/Mistral-7B-Instruct-v0.1 is restricted. You must have access to it and be authenticated to access it. Please log in.
+[2025-06-06 10:12:19] [AI_ERROR] Exception in analyze_text: You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1.
+401 Client Error. (Request ID: Root=1-684271a4-1126b4c06fb2b0ee715de032;380109b4-bea7-4b61-beab-10bae3f91131)
+
+Cannot access gated repo for url https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1/resolve/main/config.json.
+Access to model mistralai/Mistral-7B-Instruct-v0.1 is restricted. You must have access to it and be authenticated to access it. Please log in.
+[2025-06-06 10:12:24] [MODEL_LOAD_ERROR] Failed to load model: You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1.
+401 Client Error. (Request ID: Root=1-684271aa-1f843b997aeacabc4c2ef028;876dfb57-1667-4981-a907-c57810601364)
+
+Cannot access gated repo for url https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1/resolve/main/config.json.
+Access to model mistralai/Mistral-7B-Instruct-v0.1 is restricted. You must have access to it and be authenticated to access it. Please log in.
+[2025-06-06 10:12:24] [AI_ERROR] Exception in analyze_text: You are trying to access a gated repo.
+Make sure to have access to it at https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1.
+401 Client Error. (Request ID: Root=1-684271aa-1f843b997aeacabc4c2ef028;876dfb57-1667-4981-a907-c57810601364)
+
+Cannot access gated repo for url https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.1/resolve/main/config.json.
+Access to model mistralai/Mistral-7B-Instruct-v0.1 is restricted. You must have access to it and be authenticated to access it. Please log in.
+[2025-06-06 10:12:31] [SYSTEM_STOP] Guardrail System is shutting down.
+[2025-06-06 10:56:01] [SYSTEM_START] Guardrail System is starting.
+[2025-06-06 10:57:18] [AI_ERROR] Exception in analyze_text via Ollama: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+[2025-06-06 10:57:27] [AI_ERROR] Exception in analyze_text via Ollama: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+[2025-06-06 10:57:45] [AI_ERROR] Exception in analyze_text via Ollama: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+[2025-06-06 10:57:51] [AI_ERROR] Exception in analyze_text via Ollama: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+[2025-06-06 11:01:02] [KEYSTROKE_FLAGGED] NON-CMD_WINDOW: ollamaserve | AI_response: In the context of computer security, a non-command window (NCMW) is a window that does not execute commands but can display information or receive user input. The term "ollamaserve" doesn't directly indicate dangerous behavior because it doesn't appear to be a known malicious software, command, or process. However, if this term is associated with unverified and potentially risky sources, or if it's being used in an unexpected context within the system, it could be suspicious.
+
+Here are a few reasons why "ollamaserve" might be concerning:
+
+1. Unverified or unknown origin: If "ollamaserve" is discovered in a software package or online resource that hasn't been thoroughly vetted for safety, it could potentially contain malware or other harmful components.
+
+2. Unexpected context: If "ollamaserve" appears in an unexpected context within the system, such as being launched by another process without explanation or reason, this could indicate unauthorized activity.
+
+3. Association with known threats: If "ollamaserve" has been linked to malicious activities or has a history of causing security issues, it should be treated with caution.
+
+To mitigate potential risks associated with "ollamaserve", the following steps can be taken:
+
+1. Verify the source: Research the origin and reputation of the software, website, or resource that presents "ollamaserve". Be cautious when downloading or using software from unverified sources.
+
+2. Monitor closely: Keep a close eye on any processes or activities related to "ollamaserve" in your system. If it shows signs of suspicious behavior, take immediate action to isolate and investigate further.
+
+3. Use security tools: Ensure that you have reliable antivirus software and a firewall installed on your system to help protect against potential threats. Regularly update these tools for optimal protection.
+
+4. Keep your system updated: Install updates for your operating system, applications, and browser as soon as they become available to address known vulnerabilities.
+
+5. Educate yourself: Stay informed about the latest cybersecurity threats and best practices to help protect your system and personal information.
+[2025-06-06 11:02:37] [KEYSTROKE_FLAGGED] NON-CMD_WINDOW: 6e-108xcmd | AI_response: The input you provided doesn't appear to be executable code or represent a specific action taken by a user, so it doesn't directly indicate dangerous behavior. However, the large number followed by 'x' and 'cmd' can potentially be interpreted as an attempt to obfuscate something, which could be suspicious in certain contexts (e.g., monitoring log files).
+
+To mitigate this potential risk, you should implement the following strategies:
+
+1. Monitor for unusual patterns or abnormalities in user behavior and log these events for further analysis. This can help identify potential threats that may not be immediately apparent.
+2. Implement a whitelist of allowed commands and parameters to prevent unauthorized actions from being executed on the system. This can significantly reduce the risk of malicious code execution, especially when combined with other security measures such as strong authentication policies and access controls.
+3. Regularly update your system's antivirus software and ensure that all security patches are applied in a timely manner to protect against known threats.
+4. Educate users about the potential risks of clicking on suspicious links, downloading unverified files, or executing unknown commands. Encourage them to report any unusual activity or suspected security incidents for prompt investigation.
+5. Implement centralized logging and monitoring solutions to consolidate log data from various sources across your organization, making it easier to detect and respond to threats more quickly. This can help minimize the impact of potential security breaches by allowing you to take action before significant damage is done.
+[2025-06-06 11:03:30] [KEYSTROKE_FLAGGED] NON-CMD_WINDOW: ipconfig/flushdns | AI_response: The command "ipconfig /flushdns" is not inherently malicious or dangerous in itself. This command is used to clear the DNS Resolver cache on Windows systems, which can help troubleshoot certain network connectivity issues. However, if this command is being repeatedly executed in an unusual manner, it might indicate a hidden problem, such as repeated failed connections or suspicious activity.
+
+In a typical scenario, users may execute this command to resolve occasional DNS-related problems they experience. If the same IP address or domain name is consistently causing issues, or if the command is being run excessively and frequently without any apparent reason, it could potentially suggest an attempt to hide malicious activities, such as repeated connection attempts to a malicious server or domain.
+
+As a mitigation strategy, you can monitor the frequency of this command's execution, along with its context, to determine if it appears suspicious. Keep track of the user accounts and systems that repeatedly execute this command, looking for any correlations with potential threats. Furthermore, consider setting up alerts for unusual patterns in your environment to detect and respond quickly to possible security incidents.
+[2025-06-06 11:04:16] [KEYSTROKE_FLAGGED] NON-CMD_WINDOW: YYObroigotagenuienecommandboxbutwyitissayingollamaserveisdangerous? | AI_response: The text provided does not contain any direct signs of malicious or dangerous behavior. However, it's important to note that the text seems to be in English but contains several misspellings and uncommon phrases, which could potentially indicate a misconfiguration or an attempt to disguise something.
+
+To mitigate this potential issue:
+1. Ensure all systems are up-to-date with the latest security patches and software versions.
+2. Implement strong password policies and regularly audit system accounts for any suspicious activity.
+3. Monitor network traffic for unusual patterns, such as high volumes of data transfers or connections to unfamiliar IP addresses.
+4. Regularly scan systems for malware and viruses using reputable security tools.
+5. Educate users on safe computing practices, such as not clicking on suspicious links, downloading unverified software, or providing sensitive information over unsecured channels.
+[2025-06-06 11:05:03] [KEYSTROKE_FLAGGED] NON-CMD_WINDOW: ipconfig/flushdns | AI_response: The command you've provided, `ipconfig /flushdns`, is not inherently malicious on its own. This command is a part of the IPCONFIG utility in Windows operating systems and is used to clear the DNS Resolver Cache, which can help resolve issues with DNS resolution.
+
+However, when used outside of regular system maintenance or troubleshooting, it may raise suspicions due to potential data leakage concerns. The reason is that flushing DNS resolves any ongoing connections to DNS servers, potentially revealing past or current domains and IP addresses being resolved, which could inadvertently expose information about recent activities on the system.
+
+To mitigate these concerns, ensure that:
+1. The command is used judiciously for troubleshooting purposes only and not as a regular practice without an explicit need.
+2. The user has a good understanding of its implications and potential side effects before executing it.
+3. Regular system monitoring is in place to detect unusual patterns, such as frequent use of this command or other signs of unauthorized activity.
+4. Implement appropriate security measures like firewalls, intrusion detection systems (IDS), and endpoint protection solutions to minimize any potential risks associated with the execution of this command.
+[2025-06-06 11:06:25] [KEYSTROKE_FLAGGED] NON-CMD_WINDOW: okaysowehaveagoodnewstheguardrailsystemisworkinggoodbutwehave2problemshere | AI_response: The provided input does not contain any direct indicators of dangerous or malicious behavior. However, it is important to note that the message appears to be a log entry from a system, and the phrases "okay so we have a good news" and "we have 2 problems here" might suggest an underlying issue that needs attention.
+
+Here are some possible explanations for the issues mentioned:
+
+1. The guardrail system is functioning properly but there are two other unspecified problems: This could mean that while the main function of the guardrail system (whatever it may be) is working fine, there might be other aspects of the system or related systems that require attention. For example, there might be software bugs, configuration issues, or hardware faults affecting the overall performance or security of the system.
+
+Suggested mitigation: Thoroughly investigate the mentioned problems to understand their root causes and implement necessary fixes.
+
+2. The user may have a relaxed tone when communicating about potentially serious issues: This could indicate a lack of urgency or prioritization in addressing the problems, which might increase the risk of negative consequences if they are not promptly addressed.
+
+Suggested mitigation: Encourage clear and concise communication regarding security incidents or system issues to ensure that the importance of timely resolution is understood.
+
+3. Lack of specific details about the problems: In this case, it is difficult to assess the severity or potential impact of the mentioned problems without more contextual information. This might make it challenging to prioritize and address them effectively.
+
+Suggested mitigation: Ensure that system logs or incident reports contain sufficient details, including affected systems, timestamps, error messages, and any other relevant information that can help in troubleshooting and resolving the issues efficiently.
+[2025-06-06 11:06:45] [SYSTEM_STOP] Guardrail System is shutting down.
+[2025-06-06 11:12:13] [SYSTEM_START] Guardrail System is starting.
+[2025-06-06 11:14:30] [KEYSTROKE_FLAGGED] NON-CMD_WINDOW: ininlositiscatchingmycommand | AI_response: No alert required. The input appears to be a misspelling of a command ("netstat -o" instead of "netstat -i") with some additional characters at the end, which does not seem malicious or dangerous for the system.
+[2025-06-06 11:14:46] [KEYSTROKE_FLAGGED] NON-CMD_WINDOW: itwillraisesuspisionifirunsomefishyandsussycommand | AI_response: The command "itwillraisesuspisionifirunsomefishyandsussycommand" appears harmless as it doesn't contain any known malicious or suspicious commands commonly associated with potential threats. No alert is raised.
+[2025-06-06 11:14:52] [KEYSTROKE_FLAGGED] NON-CMD_WINDOW: vsomepoplikethiscoe | AI_response: No alert necessary. The provided text appears to be a string of characters with no indications of being harmful or malicious software activity within a Windows environment.
+[2025-06-06 11:15:06] [KEYSTROKE_FLAGGED] NON-CMD_WINDOW: no | AI_response: Based on the information provided, there seems to be no indication of any dangerous or malicious activity at this moment. The system appears to be running normally. No alert needed.
+[2025-06-06 11:15:20] [KEYSTROKE_FLAGGED] NON-CMD_WINDOW: itisststillcathctchingtextfrommybrowserand. | AI_response: The provided text appears to be a normal user activity related to web browsing. No alerts are necessary as no dangerous or malicious changes have been detected.
+[2025-06-06 11:15:52] [KEYSTROKE_FLAGGED] NON-CMD_WINDOW: meansitisshowingalertfornnsuspiciustoo | AI_response: Based on the information provided, there does not seem to be any indication of danger or malicious activity. The "nonsuspicious" behavior observed in the non-cmd window suggests it is safe and no alert is necessary.
+[2025-06-06 11:16:12] [KEYSTROKE_FLAGGED] NON-CMD_WINDOW: lemeexplain | AI_response: No alert required. This command appears to be a harmless text message with no executable code. It seems safe to ignore this message.
+[2025-06-06 11:16:33] [KEYSTROKE_FLAGGED] NON-CMD_WINDOW: caucommonvc? | AI_response: I cannot determine if the command "caucommonvc?" poses any danger or is malicious as it does not appear to be a common command on Windows systems. However, without additional context or information about what this command does, there's no reason to raise an alert. It seems safe for now.
+[2025-06-06 11:16:47] [KEYSTROKE_FLAGGED] NON-CMD_WINDOW: voicecall | AI_response: There seems to be no harmful activity detected in this "voicecall" event on your system. It appears to be a normal application event. No alerts are needed at this time.
+[2025-06-06 14:38:51] [SYSTEM_START] Guardrail System is starting.
+[2025-06-06 14:39:04] [AI_ERROR] Exception in analyze_text via Ollama: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+[2025-06-06 14:39:14] [AI_ERROR] Exception in analyze_text via Ollama: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+[2025-06-06 14:39:29] [AI_ERROR] Exception in analyze_text via Ollama: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+[2025-06-06 14:39:35] [AI_ERROR] Exception in analyze_text via Ollama: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+[2025-06-06 14:39:40] [AI_ERROR] Exception in analyze_text via Ollama: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+[2025-06-06 14:40:53] [KEYSTROKE_FLAGGED] NON-CMD_WINDOW: ollamaserve | AI_response: No alert needed. The provided string "ollamaserve" does not indicate any malicious or dangerous behavior in a Windows system context. It appears to be an unrecognized term without any obvious implications for system safety.
+[2025-06-06 14:42:31] [SYSTEM_STOP] Guardrail System is shutting down.
+[2025-06-07 11:23:00] [SYSTEM_START] Guardrail System is starting.
+[2025-06-07 11:26:00] [KEYSTROKE_FLAGGED] NON-CMD_WINDOW: cd | AI_response: This command does not pose a threat or cause any harmful effects to your system. It simply changes the current directory in a Command Prompt window to the specified path (in this case, no specific path was given). Therefore, there is no need for an alert.
+[2025-06-07 11:50:50] [SYSTEM_STOP] Guardrail System is shutting down.
+[2025-06-08 14:38:12] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 14:38:56] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 14:42:36] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 14:47:38] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 14:49:56] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 14:51:59] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 14:58:16] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 15:01:11] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 15:05:58] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 15:07:46] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 15:08:28] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 17:10:26] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 20:37:34] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 23:25:46] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 23:25:46] [CMD_MONITOR_STARTED] Command-line monitor started.
+[2025-06-08 23:29:41] [SYSTEM_STOP] Guardrail System is shutting down.
+[2025-06-08 23:29:51] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 23:29:51] [CMD_MONITOR] CMD_MONITOR started.
+[2025-06-08 23:43:28] [SYSTEM_STOP] Guardrail System is shutting down.
+[2025-06-08 23:43:45] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 23:43:45] [CMD_MONITOR] CMD_MONITOR started
+[2025-06-08 23:46:55] [SETTINGS_MONITOR_ERROR] Defender query failed: Command '['powershell', '-NoProfile', '-Command', 'Get-MpPreference | Select-Object DisableRealtimeMonitoring | ConvertTo-Json']' returned non-zero exit status 1.
+[2025-06-08 23:46:56] [SYSTEM_STOP] Guardrail System is shutting down.
+[2025-06-08 23:47:00] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 23:47:00] [CMD_MONITOR] Starting keyboard hook...
+[2025-06-08 23:47:00] [KEY_EVENT] Key: alt | WindowClass: XamlExplorerHostIslandWindow
+[2025-06-08 23:47:01] [KEY_EVENT] Key: o | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:01] [KEY_EVENT] Key: o | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:02] [KEY_EVENT] Key: l | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:02] [KEY_EVENT] Key: l | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:02] [KEY_EVENT] Key: l | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:02] [KEY_EVENT] Key: l | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:02] [KEY_EVENT] Key: a | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:02] [KEY_EVENT] Key: a | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:02] [KEY_EVENT] Key: m | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:02] [KEY_EVENT] Key: m | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:02] [KEY_EVENT] Key: a | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:02] [KEY_EVENT] Key: a | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:02] [KEY_EVENT] Key: space | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:02] [KEY_EVENT] Key: space | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:02] [KEY_EVENT] Key: s | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:02] [KEY_EVENT] Key: s | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:02] [KEY_EVENT] Key: e | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:03] [KEY_EVENT] Key: e | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:03] [KEY_EVENT] Key: r | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:03] [KEY_EVENT] Key: r | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:03] [KEY_EVENT] Key: v | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:03] [KEY_EVENT] Key: v | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:03] [KEY_EVENT] Key: e | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:47:03] [KEY_EVENT] Key: e | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:56:54] [SETTINGS_MONITOR_ERROR] Defender query failed: Command '['powershell', '-NoProfile', '-Command', 'Get-MpPreference | Select-Object DisableRealtimeMonitoring | ConvertTo-Json']' returned non-zero exit status 1.
+[2025-06-08 23:56:54] [SYSTEM_STOP] Guardrail System is shutting down.
+[2025-06-08 23:56:59] [SYSTEM_START] Guardrail System is starting.
+[2025-06-08 23:56:59] [CMD_MONITOR] Starting keyboard hook...
+[2025-06-08 23:56:59] [KEY_EVENT] Key: tab | WindowClass: XamlExplorerHostIslandWindow
+[2025-06-08 23:56:59] [KEY_EVENT] Key: alt | WindowClass: XamlExplorerHostIslandWindow
+[2025-06-08 23:57:00] [KEY_EVENT] Key: alt | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:57:00] [KEY_EVENT] Key: tab | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:57:00] [KEY_EVENT] Key: alt | WindowClass: XamlExplorerHostIslandWindow
+[2025-06-08 23:57:00] [KEY_EVENT] Key: tab | WindowClass: XamlExplorerHostIslandWindow
+[2025-06-08 23:57:01] [KEY_EVENT] Key: alt | WindowClass: SunAwtFrame
+[2025-06-08 23:57:01] [KEY_EVENT] Key: tab | WindowClass: SunAwtFrame
+[2025-06-08 23:57:01] [KEY_EVENT] Key: tab | WindowClass: XamlExplorerHostIslandWindow
+[2025-06-08 23:57:01] [KEY_EVENT] Key: tab | WindowClass: XamlExplorerHostIslandWindow
+[2025-06-08 23:57:01] [KEY_EVENT] Key: tab | WindowClass: XamlExplorerHostIslandWindow
+[2025-06-08 23:57:02] [KEY_EVENT] Key: tab | WindowClass: XamlExplorerHostIslandWindow
+[2025-06-08 23:57:02] [KEY_EVENT] Key: tab | WindowClass: XamlExplorerHostIslandWindow
+[2025-06-08 23:57:02] [KEY_EVENT] Key: tab | WindowClass: XamlExplorerHostIslandWindow
+[2025-06-08 23:57:02] [KEY_EVENT] Key: tab | WindowClass: XamlExplorerHostIslandWindow
+[2025-06-08 23:57:02] [KEY_EVENT] Key: tab | WindowClass: XamlExplorerHostIslandWindow
+[2025-06-08 23:57:02] [KEY_EVENT] Key: tab | WindowClass: XamlExplorerHostIslandWindow
+[2025-06-08 23:57:02] [KEY_EVENT] Key: alt | WindowClass: XamlExplorerHostIslandWindow
+[2025-06-08 23:57:03] [KEY_EVENT] Key: c | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:57:03] [KEY_EVENT] Key: c | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:57:03] [KEY_EVENT] Key: l | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:57:03] [KEY_EVENT] Key: l | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:57:03] [KEY_EVENT] Key: d | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:57:03] [KEY_EVENT] Key: d | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:57:04] [KEY_EVENT] Key: enter | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-08 23:57:04] [CMD_ANALYZE] Analyzing command: cld
+[2025-06-08 23:58:03] [CMD_FLAGGED] Command: cld | AI Response: The command "cld" doesn't have any recognized or commonly used meaning in operating systems, which could potentially indicate an unintended or erroneous command. However, it's important to note that the actual danger depends on the context and the environment where this command is being executed (for example, a user's terminal, a server, IoT device, etc.).
+
+Here are a few possible scenarios:
+
+1. Typographical error: The user may have accidentally typed "cld" instead of a known command like "cd" or "clr". In this case, the mitigation would be for the user to double-check their commands before executing them.
+
+2. Unknown or malicious command: If the command is intentionally meant as "cld", it could potentially be an unknown or malicious command that could harm the system or compromise its security. In this case, it's recommended to run a trusted antivirus software and monitor the system for any suspicious activities.
+
+3. Command-line interface experimentation: It's also possible that the user is experimenting with custom commands or scripts in their command-line interface (CLI). In such cases, the user should be cautious about the source of the commands and ensure they fully understand the potential consequences before executing them.
+
+In all scenarios, it's essential to practice safe computing habits, including keeping software updated, using strong passwords, and regularly backing up important data.
+[2025-06-08 23:58:15] [CMD_ALLOWED] User allowed command: cld
+[2025-06-09 00:01:23] [SYSTEM_STOP] Guardrail System is shutting down.
+[2025-06-21 18:47:31] [SYSTEM_START] Guardrail System is starting.
+[2025-06-21 18:47:31] [CMD_MONITOR] Starting keyboard hook...
+[2025-06-21 18:47:36] [KEY_EVENT] Key: caps lock | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-21 18:47:36] [KEY_EVENT] Key: caps lock | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-21 18:47:36] [KEY_EVENT] Key: caps lock | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-21 18:47:36] [KEY_EVENT] Key: caps lock | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-21 18:47:37] [KEY_EVENT] Key: caps lock | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-21 18:47:37] [KEY_EVENT] Key: caps lock | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-21 18:47:37] [KEY_EVENT] Key: caps lock | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-21 18:47:37] [KEY_EVENT] Key: caps lock | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-21 18:47:37] [KEY_EVENT] Key: caps lock | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-21 18:47:37] [KEY_EVENT] Key: caps lock | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-21 18:47:37] [KEY_EVENT] Key: caps lock | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-21 18:47:37] [KEY_EVENT] Key: caps lock | WindowClass: CASCADIA_HOSTING_WINDOW_CLASS
+[2025-06-21 18:47:41] [KEY_EVENT] Key: c | WindowClass: Windows.UI.Core.CoreWindow
+[2025-06-21 18:47:42] [KEY_EVENT] Key: c | WindowClass: Windows.UI.Core.CoreWindow
+[2025-06-21 18:47:42] [KEY_EVENT] Key: m | WindowClass: Windows.UI.Core.CoreWindow
+[2025-06-21 18:47:42] [KEY_EVENT] Key: m | WindowClass: Windows.UI.Core.CoreWindow
+[2025-06-21 18:47:42] [KEY_EVENT] Key: d | WindowClass: Windows.UI.Core.CoreWindow
+[2025-06-21 18:47:42] [KEY_EVENT] Key: d | WindowClass: Windows.UI.Core.CoreWindow
+[2025-06-21 18:47:42] [KEY_EVENT] Key: enter | WindowClass: Windows.UI.Core.CoreWindow
+[2025-06-21 18:50:42] [SYSTEM_START] Guardrail System is starting.
+[2025-06-21 18:50:42] [CMD_MONITOR] Starting keyboard hook...
+[2025-06-21 18:50:47] [KEY_EVENT] Key: alt | WindowClass: SunAwtFrame
+[2025-06-21 18:50:47] [KEY_EVENT] Key: tab | WindowClass: SunAwtFrame
+[2025-06-21 18:50:47] [KEY_EVENT] Key: alt | WindowClass: ForegroundStaging
+[2025-06-21 18:50:47] [KEY_EVENT] Key: tab | WindowClass: ForegroundStaging
+[2025-06-21 18:51:03] [KEY_EVENT] Key: n | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:03] [KEY_EVENT] Key: n | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:03] [KEY_EVENT] Key: o | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:03] [KEY_EVENT] Key: o | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:03] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:03] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:04] [KEY_EVENT] Key: l | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:04] [KEY_EVENT] Key: l | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:05] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:05] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:05] [KEY_EVENT] Key: k | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:05] [KEY_EVENT] Key: k | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:05] [KEY_EVENT] Key: e | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:05] [KEY_EVENT] Key: e | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:05] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:05] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:06] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:06] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:06] [KEY_EVENT] Key: t | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:06] [KEY_EVENT] Key: t | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:06] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:06] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:06] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:06] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:06] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:06] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:07] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:07] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:07] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:07] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:07] [KEY_EVENT] Key: backspace | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:07] [KEY_EVENT] Key: backspace | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:08] [KEY_EVENT] Key: backspace | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:08] [KEY_EVENT] Key: backspace | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:08] [KEY_EVENT] Key: backspace | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:08] [KEY_EVENT] Key: backspace | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:08] [KEY_EVENT] Key: backspace | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:08] [KEY_EVENT] Key: backspace | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:08] [KEY_EVENT] Key: backspace | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:08] [KEY_EVENT] Key: backspace | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:08] [KEY_EVENT] Key: backspace | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:08] [KEY_EVENT] Key: backspace | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:08] [KEY_EVENT] Key: backspace | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:08] [KEY_EVENT] Key: backspace | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:09] [KEY_EVENT] Key: o | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:09] [KEY_EVENT] Key: o | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:09] [KEY_EVENT] Key: l | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:09] [KEY_EVENT] Key: l | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:09] [KEY_EVENT] Key: l | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:09] [KEY_EVENT] Key: l | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:09] [KEY_EVENT] Key: a | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:10] [KEY_EVENT] Key: a | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:10] [KEY_EVENT] Key: m | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:10] [KEY_EVENT] Key: m | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:10] [KEY_EVENT] Key: a | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:10] [KEY_EVENT] Key: a | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:11] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:11] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:12] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:12] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:12] [KEY_EVENT] Key: t | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:12] [KEY_EVENT] Key: t | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:12] [KEY_EVENT] Key: a | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:12] [KEY_EVENT] Key: a | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:12] [KEY_EVENT] Key: t | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:12] [KEY_EVENT] Key: t | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:12] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:12] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:12] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:13] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:13] [KEY_EVENT] Key: l | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:13] [KEY_EVENT] Key: l | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:13] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:13] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:13] [KEY_EVENT] Key: k | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:13] [KEY_EVENT] Key: k | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:13] [KEY_EVENT] Key: e | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:13] [KEY_EVENT] Key: e | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:13] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:13] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:14] [KEY_EVENT] Key: h | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:14] [KEY_EVENT] Key: h | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:14] [KEY_EVENT] Key: o | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:14] [KEY_EVENT] Key: o | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:14] [KEY_EVENT] Key: w | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:14] [KEY_EVENT] Key: w | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:14] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:14] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:14] [KEY_EVENT] Key: m | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:14] [KEY_EVENT] Key: m | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:14] [KEY_EVENT] Key: a | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:15] [KEY_EVENT] Key: a | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:15] [KEY_EVENT] Key: n | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:15] [KEY_EVENT] Key: n | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:15] [KEY_EVENT] Key: y | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:15] [KEY_EVENT] Key: y | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:15] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:15] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:15] [KEY_EVENT] Key: r | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:15] [KEY_EVENT] Key: r | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:15] [KEY_EVENT] Key: e | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:15] [KEY_EVENT] Key: e | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:16] [KEY_EVENT] Key: q | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:16] [KEY_EVENT] Key: q | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:16] [KEY_EVENT] Key: u | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:16] [KEY_EVENT] Key: u | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:16] [KEY_EVENT] Key: e | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:16] [KEY_EVENT] Key: e | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:16] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:16] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:16] [KEY_EVENT] Key: t | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:16] [KEY_EVENT] Key: t | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:17] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:17] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:17] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:17] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:18] [KEY_EVENT] Key: g | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:18] [KEY_EVENT] Key: g | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:18] [KEY_EVENT] Key: o | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:18] [KEY_EVENT] Key: o | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:18] [KEY_EVENT] Key: n | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:18] [KEY_EVENT] Key: e | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:18] [KEY_EVENT] Key: n | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:18] [KEY_EVENT] Key: e | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:18] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:18] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:18] [KEY_EVENT] Key: t | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:18] [KEY_EVENT] Key: t | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:18] [KEY_EVENT] Key: o | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:19] [KEY_EVENT] Key: o | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:19] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:19] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:23] [KEY_EVENT] Key: a | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:23] [KEY_EVENT] Key: a | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:23] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:23] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:23] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:24] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:24] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:24] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:24] [KEY_EVENT] Key: e | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:24] [KEY_EVENT] Key: e | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:24] [KEY_EVENT] Key: r | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:24] [KEY_EVENT] Key: r | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:24] [KEY_EVENT] Key: v | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:24] [KEY_EVENT] Key: v | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:24] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:24] [KEY_EVENT] Key: c | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:24] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:24] [KEY_EVENT] Key: c | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:24] [KEY_EVENT] Key: e | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:24] [KEY_EVENT] Key: e | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:24] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:25] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:25] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:25] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:25] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:25] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:25] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:25] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:25] [KEY_EVENT] Key: n | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:25] [KEY_EVENT] Key: n | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:25] [KEY_EVENT] Key: o | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:25] [KEY_EVENT] Key: t | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:25] [KEY_EVENT] Key: o | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:25] [KEY_EVENT] Key: t | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:25] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:25] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:26] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:26] [KEY_EVENT] Key: s | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:26] [KEY_EVENT] Key: h | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:26] [KEY_EVENT] Key: h | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:26] [KEY_EVENT] Key: w | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:26] [KEY_EVENT] Key: w | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:26] [KEY_EVENT] Key: o | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:26] [KEY_EVENT] Key: o | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:26] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:26] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:26] [KEY_EVENT] Key: n | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:26] [KEY_EVENT] Key: n | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:26] [KEY_EVENT] Key: g | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:26] [KEY_EVENT] Key: g | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:27] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:27] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:27] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:27] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:27] [KEY_EVENT] Key: n | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:27] [KEY_EVENT] Key: n | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:27] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:27] [KEY_EVENT] Key: space | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:27] [KEY_EVENT] Key: t | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:27] [KEY_EVENT] Key: t | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:27] [KEY_EVENT] Key: e | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:27] [KEY_EVENT] Key: e | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:28] [KEY_EVENT] Key: r | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:28] [KEY_EVENT] Key: r | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:28] [KEY_EVENT] Key: m | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:28] [KEY_EVENT] Key: m | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:29] [KEY_EVENT] Key: n | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:29] [KEY_EVENT] Key: n | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:30] [KEY_EVENT] Key: backspace | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:30] [KEY_EVENT] Key: backspace | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:30] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:31] [KEY_EVENT] Key: i | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:31] [KEY_EVENT] Key: n | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:31] [KEY_EVENT] Key: a | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:31] [KEY_EVENT] Key: n | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:31] [KEY_EVENT] Key: a | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:31] [KEY_EVENT] Key: l | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:31] [KEY_EVENT] Key: l | WindowClass: Chrome_WidgetWin_1
+[2025-06-21 18:51:31] [KEY_EVENT] Key: enter | WindowClass: Chrome_WidgetWin_1
+[2025-06-22 20:23:23] [CUSTOM_SHELL] Guardrail Secure Shell started.
+[2025-06-22 20:23:30] [CMD_ANALYZE] Analyzing command: ipconfig
+[2025-06-22 20:24:05] [CUSTOM_SHELL] Guardrail Secure Shell started.
+[2025-06-22 20:24:10] [CMD_ANALYZE] Analyzing command: ipconfig
+[2025-06-22 20:24:59] [CMD_FLAGGED] Command: ipconfig | AI Response: The command "ipconfig" itself is not inherently dangerous. It's a standard utility in Windows operating systems that displays IP configuration information about the computer or local network interfaces. However, if this command is being used excessively or at odd hours, it might indicate an attempt to gather network information, which could potentially be suspicious.
+
+To mitigate potential risks, here are some suggestions:
+
+1. Limit the number of times this command can be executed from a single account within a certain timeframe. This helps prevent excessive scanning or probing of the system's IP configuration.
+
+2. Implement monitoring systems to detect unusual patterns of usage, such as repeated "ipconfig" commands during off-hours or within short intervals.
+
+3. Educate users about the potential risks associated with excessive use of this command and encourage them to report any suspicious activity they may encounter.
+
+4. Ensure that your system is up-to-date with the latest security patches and antivirus software, as this can help protect against threats that might exploit such commands.
+[2025-06-22 20:25:57] [CMD_ALLOWED] User allowed command: ipconfig
+[2025-06-22 21:43:32] [SECURE_SHELL_START] Secure Shell started.
+[2025-06-22 21:43:40] [CMD_INPUT] ipconfig
+[2025-06-22 21:44:02] [CMD_AI_RESPONSE] ipconfig | AI: {'DANGEROUS': False, 'reason': "The 'ipconfig' command is a system diagnostic tool that displays IP configuration information for your network adapters. It does not pose any direct danger to the system or network security by itself."}
+[2025-06-22 21:44:02] [SECURE_SHELL_ERROR] the JSON object must be str, bytes or bytearray, not dict
+[2025-06-22 22:25:31] [SECURE_SHELL_START] Secure Shell started.
+[2025-06-22 22:25:35] [CMD_INPUT] ipconfig
+[2025-06-22 22:25:52] [CMD_AI_RESPONSE] ipconfig | AI: {'DANGEROUS': False, 'reason': 'ipconfig is a system command used for displaying TCP/IP parameters and other networking information on Microsoft Windows systems. It does not pose a direct threat to the system.'}
+[2025-06-22 22:25:52] [CMD_SAFE] ipconfig deemed safe
+[2025-06-22 22:26:26] [CMD_INPUT] cd
+[2025-06-22 22:26:34] [CMD_AI_RESPONSE] cd | AI: {'DANGEROUS': False, 'reason': "It is safe as 'cd' command changes the current directory within the same system and does not pose any security risks."}
+[2025-06-22 22:26:34] [CMD_SAFE] cd deemed safe
+[2025-06-22 23:13:05] [SECURE_SHELL_START] Secure Shell started.
+[2025-06-22 23:13:10] [CMD_INPUT] ipconfig
+[2025-06-22 23:13:31] [CMD_AI_RESPONSE] ipconfig | AI: {'DANGEROUS': False, 'reason': 'ipconfig is a command used to view and configure IP address settings on Windows operating systems. It does not pose any inherent security risk when executed by itself.'}
+[2025-06-22 23:13:31] [CMD_SAFE] ipconfig deemed safe
+[2025-06-22 23:35:46] [CMD_INPUT] ls
+[2025-06-22 23:35:59] [CMD_AI_RESPONSE] ls | AI: {'DANGEROUS': False, 'reason': "The command 'ls' simply lists the contents of a directory. It does not pose any immediate security risks."}
+[2025-06-22 23:35:59] [CMD_SAFE] ls deemed safe
+[2025-06-22 23:36:12] [CMD_INPUT] cd
+[2025-06-22 23:36:19] [CMD_AI_RESPONSE] cd | AI: {'DANGEROUS': False, 'reason': "The command 'cd' is used to change the current working directory. It does not inherently pose a security risk."}
+[2025-06-22 23:36:19] [CMD_SAFE] cd deemed safe
+[2025-06-23 00:29:40] [SECURE_SHELL_START] Secure Shell started.
+[2025-06-23 00:29:46] [SECURE_SHELL_EXIT] User exited Secure Shell.
+[2025-06-23 00:30:23] [SECURE_SHELL_START] Secure Shell started.
+[2025-06-23 00:30:29] [CMD_INPUT] ipconfig
+[2025-06-23 00:30:48] [CMD_AI_RESPONSE] ipconfig | AI: {'DANGEROUS': False, 'reason': 'ipconfig command is not inherently dangerous. It displays network configuration information.'}
+[2025-06-23 00:30:48] [CMD_SAFE] ipconfig deemed safe
+[2025-06-23 00:30:59] [CMD_INPUT] dir
+[2025-06-23 00:31:05] [CMD_AI_RESPONSE] dir | AI: {'DANGEROUS': False, 'reason': "The command 'dir' is not inherently dangerous. It displays a list of files and directories in the current directory."}
+[2025-06-23 00:31:05] [CMD_SAFE] dir deemed safe
+[2025-06-23 00:31:18] [CMD_INPUT] ls
+[2025-06-23 00:31:25] [CMD_AI_RESPONSE] ls | AI: {'DANGEROUS': False, 'reason': "The command 'ls' simply lists the files and directories in the current directory. There is no inherent danger in executing this command."}
+[2025-06-23 00:31:25] [CMD_SAFE] ls deemed safe
