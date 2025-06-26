@@ -13,7 +13,7 @@ def print_tree(start_path, prefix=""):
             print_tree(path, prefix + extension)
 
 # Replace this path with your folder path
-root_dir = "D:\pycharm\Grievance_cell"
+root_dir = "D:\pycharm\guardrail_system"
 
 print(os.path.basename(root_dir) + "/")
 print_tree(root_dir)
