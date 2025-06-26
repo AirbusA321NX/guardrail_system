@@ -498,3 +498,17 @@ To mitigate potential risks, here are some suggestions:
 [2025-06-23 00:31:18] [CMD_INPUT] ls
 [2025-06-23 00:31:25] [CMD_AI_RESPONSE] ls | AI: {'DANGEROUS': False, 'reason': "The command 'ls' simply lists the files and directories in the current directory. There is no inherent danger in executing this command."}
 [2025-06-23 00:31:25] [CMD_SAFE] ls deemed safe
+[2025-06-25 11:37:23] [ARCHIVE_FOUND] D:/testing_folder\cns.zip
+[2025-06-25 11:38:09] [ARCHIVE_FILE_FLAGGED] 2020-2024 (practical).xlsx | {'DANGEROUS': True, 'reason': 'The file has high entropy and is in a potentially packed or encrypted format, which could indicate malicious intent.'}
+[2025-06-25 11:38:35] [ARCHIVE_FILE_FLAGGED] 2020-2024.xlsx | {'DANGEROUS': True, 'reason': 'The file has high entropy and is of an unknown file type, which may indicate that it is packed or encrypted. It is recommended to scan the file for malware or viruses before opening it.'}
+[2025-06-25 11:38:53] [ARCHIVE_FILE_FLAGGED] cs-601-computer networks and security course file (1) (1).docx | {'DANGEROUS': True, 'reason': 'The file type is a Word document and it has high entropy which may indicate that it is packed or encrypted. This increases the risk of malicious content being present in the file.'}
+[2025-06-25 11:39:06] [ARCHIVE_FILE_FLAGGED] cs-601-computer networks and security course file (1) (2).docx | {'DANGEROUS': True, 'reason': 'The file has a high entropy which may indicate that it is packed or encrypted. As such, it presents a potential security risk.'}
+[2025-06-25 11:39:17] [ARCHIVE_FILE_SAFE] cs-601-computer networks and security course file (1).docx | {'DANGEROUS': False, 'reason': 'The file appears to be a common Word document and does not exhibit any signs of malicious activity based on the provided information.'}
+[2025-06-25 11:39:25] [ARCHIVE_FILE_SAFE] cs-601-computer networks and security course file _new_viren.docx | {'DANGEROUS': False, 'reason': 'The command does not specify a dangerous or malicious action.'}
+[2025-06-25 11:39:33] [ARCHIVE_FILE_SAFE] dm_links.txt | {'DANGEROUS': False, 'reason': 'File appears to be a plain text file with no inherent security risks.'}
+[2025-06-25 11:39:46] [ARCHIVE_FILE_FLAGGED] download.jpg | {'DANGEROUS': True, 'reason': 'The file has high entropy and could possibly be packed or encrypted, posing a risk of containing malicious content.'}
+[2025-06-25 11:40:04] [ARCHIVE_FILE_FLAGGED] final cs-601 2018-22 co po analysis.xlsx | {'DANGEROUS': True, 'reason': 'The file has a high entropy and may be packed or encrypted, making it difficult to analyze without proper decryption tools.'}
+[2025-06-25 11:40:14] [ARCHIVE_FILE_FLAGGED] final cs-601 2019-23 co po analysis.xlsx | {'DANGEROUS': True, 'reason': 'The file has high entropy and is possibly packed or encrypted.'}
+[2025-06-25 11:40:21] [ARCHIVE_FILE_SAFE] final cs-651 2018-22 co po analysis.xlsx | {'DANGEROUS': False, 'reason': 'The file is a spreadsheet file type and does not appear to be packed or encrypted based on the provided tags.'}
+[2025-06-25 11:40:27] [ARCHIVE_FILE_SAFE] final cs-651 2019-23 co po analysis.xlsx | {'DANGEROUS': False, 'reason': 'The file has been identified as a spreadsheet file and does not appear to contain any known security risks.'}
+[2025-06-25 11:40:35] [ARCHIVE_FILE_SAFE] operating system (2021) - for merge_format _final.pdf | {'DANGEROUS': False, 'reason': 'The command does not contain any inherently dangerous operations.'}
