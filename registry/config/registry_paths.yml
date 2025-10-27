@@ -1,0 +1,298 @@
+registry_watchlist:
+- description: User-specific startup programs
+  hive: HKCU
+  path: Software\Microsoft\Windows\CurrentVersion\Run
+  risk: high
+- description: User-specific one-time startup programs
+  hive: HKCU
+  path: Software\Microsoft\Windows\CurrentVersion\RunOnce
+  risk: high
+- description: User-specific startup services
+  hive: HKCU
+  path: Software\Microsoft\Windows\CurrentVersion\RunServices
+  risk: high
+- description: User-specific one-time startup services
+  hive: HKCU
+  path: Software\Microsoft\Windows\CurrentVersion\RunServicesOnce
+  risk: high
+- description: Extended user-specific one-time startup programs
+  hive: HKCU
+  path: Software\Microsoft\Windows\CurrentVersion\RunOnceEx
+  risk: high
+- description: System-wide startup programs
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+  risk: critical
+- description: System-wide one-time startup programs
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce
+  risk: critical
+- description: System-wide startup services
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows\CurrentVersion\RunServices
+  risk: critical
+- description: System-wide one-time startup services
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows\CurrentVersion\RunServicesOnce
+  risk: critical
+- description: Windows logon configuration
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon
+  risk: critical
+- description: Winlogon notification packages
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify
+  risk: critical
+- description: User initialization program
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Userinit
+  risk: critical
+- description: Default shell configuration
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Shell
+  risk: critical
+- description: Windows services registry entries
+  hive: HKLM
+  path: SYSTEM\CurrentControlSet\Services
+  risk: critical
+- description: Shell service objects
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellServiceObjects
+  risk: high
+- description: Delay-loaded shell service objects
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellServiceObjectDelayLoad
+  risk: high
+- description: Browser helper objects
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Browser Helper Objects
+  risk: high
+- description: Shared task scheduler entries
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\SharedTaskScheduler
+  risk: high
+- description: COM class identifiers
+  hive: HKLM
+  path: SOFTWARE\Classes\CLSID
+  risk: high
+- description: 32-bit COM class identifiers on 64-bit systems
+  hive: HKLM
+  path: SOFTWARE\Classes\Wow6432Node\CLSID
+  risk: high
+- description: Application IDs
+  hive: HKLM
+  path: SOFTWARE\Classes\AppID
+  risk: high
+- description: COM interfaces
+  hive: HKLM
+  path: SOFTWARE\Classes\Interface
+  risk: high
+- description: Active setup components
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Active Setup\Installed Components
+  risk: high
+- description: Image file execution options for debugging
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options
+  risk: high
+- description: Group policy startup scripts
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Startup
+  risk: critical
+- description: Group policy shutdown scripts
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Shutdown
+  risk: critical
+- description: Group policy logon scripts
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logon
+  risk: high
+- description: Group policy logoff scripts
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows\CurrentVersion\Group Policy\Scripts\Logoff
+  risk: high
+- description: Scheduled tasks cache
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tasks
+  risk: high
+- description: Scheduled tasks tree structure
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree
+  risk: high
+- description: AppInit DLLs configuration
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows
+  risk: critical
+- description: 32-bit AppInit DLLs on 64-bit systems
+  hive: HKLM
+  path: SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows
+  risk: critical
+- description: Group policy extensions
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions
+  risk: high
+- description: Known DLLs list
+  hive: HKLM
+  path: SYSTEM\CurrentControlSet\Control\Session Manager\KnownDLLs
+  risk: critical
+- description: Application paths
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths
+  risk: high
+- description: 32-bit application paths on 64-bit systems
+  hive: HKLM
+  path: SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\App Paths
+  risk: high
+- description: Command processor autorun settings
+  hive: HKCU
+  path: SOFTWARE\Microsoft\Command Processor
+  risk: high
+- description: System-wide command processor autorun settings
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Command Processor
+  risk: critical
+- description: 32-bit command processor autorun on 64-bit systems
+  hive: HKLM
+  path: SOFTWARE\Wow6432Node\Microsoft\Command Processor
+  risk: critical
+- description: Accessibility tools
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows NT\CurrentVersion\Accessibility\ATs
+  risk: high
+- description: Credential providers
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\Credential Providers
+  risk: critical
+- description: Credential provider filters
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows\CurrentVersion\Authentication\Credential Provider
+    Filters
+  risk: critical
+- description: Network providers
+  hive: HKLM
+  path: SYSTEM\CurrentControlSet\Services\NetworkProvider\Providers
+  risk: high
+- description: Print monitors
+  hive: HKLM
+  path: SYSTEM\CurrentControlSet\Control\Print\Monitors
+  risk: critical
+- description: Event log configuration
+  hive: HKLM
+  path: SYSTEM\CurrentControlSet\Services\EventLog
+  risk: high
+- description: WMI autorecovery MOFs
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Wbem\CIMOM\Autorecover MOFs
+  risk: high
+- description: PowerShell shell IDs
+  hive: HKLM
+  path: SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell
+  risk: high
+- description: BITS scheduled tasks
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows NT\CurrentVersion\Schedule\TaskCache\Tree\Microsoft\Windows\BITS
+  risk: high
+- description: Time providers
+  hive: HKLM
+  path: SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders
+  risk: high
+- description: Security providers
+  hive: HKLM
+  path: SYSTEM\CurrentControlSet\Control\SecurityProviders\SecurityProvider
+  risk: critical
+- description: LSA authentication packages
+  hive: HKLM
+  path: SYSTEM\CurrentControlSet\Control\Lsa
+  risk: critical
+- description: Network provider order
+  hive: HKLM
+  path: SYSTEM\CurrentControlSet\Control\NetworkProvider\Order
+  risk: high
+- description: Boot verification program
+  hive: HKLM
+  path: SYSTEM\CurrentControlSet\Control\BootVerificationProgram
+  risk: critical
+- description: Safe boot configuration
+  hive: HKLM
+  path: SYSTEM\CurrentControlSet\Control\SafeBoot
+  risk: critical
+- description: Filter drivers class
+  hive: HKLM
+  path: SYSTEM\CurrentControlSet\Control\Class\{71A27CDD-812A-11D0-BEC7-08002BE2092F}
+  risk: critical
+- description: File system filter instances
+  hive: HKLM
+  path: SYSTEM\CurrentControlSet\Services\FltMgr\Instances
+  risk: critical
+- description: Print port monitors
+  hive: HKLM
+  path: SYSTEM\CurrentControlSet\Control\Print\Monitors
+  risk: critical
+- description: Screen saver configuration
+  hive: HKCU
+  path: SOFTWARE\Microsoft\Windows\CurrentVersion\ScreenSavers
+  risk: medium
+- description: Application certificate DLLs
+  hive: HKLM
+  path: SYSTEM\CurrentControlSet\Control\Session Manager\AppCertDlls
+  risk: critical
+- description: Application initialization DLLs
+  hive: HKLM
+  path: SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows\AppInit_DLLs
+  risk: critical
+- description: 32-bit AppInit DLLs on 64-bit systems
+  hive: HKLM
+  path: SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows\AppInit_DLLs
+  risk: critical
+- description: Winsock protocol catalog entries
+  hive: HKLM
+  path: SYSTEM\CurrentControlSet\Services\WinSock2\Parameters\Protocol_Catalog9\Catalog_Entries
+  risk: high
+- description: Font driver cache
+  hive: HKLM
+  path: SYSTEM\CurrentControlSet\Control\FontDriverCache
+  risk: medium
+- description: Context menu handlers for all file types
+  hive: HKLM
+  path: SOFTWARE\Classes\*\shellex\ContextMenuHandlers
+  risk: medium
+- description: Directory context menu handlers
+  hive: HKLM
+  path: SOFTWARE\Classes\Directory\shellex\ContextMenuHandlers
+  risk: medium
+- description: Folder context menu handlers
+  hive: HKLM
+  path: SOFTWARE\Classes\Folder\shellex\ContextMenuHandlers
+  risk: medium
+- description: Copy hook handlers
+  hive: HKLM
+  path: SOFTWARE\Classes\Directory\shellex\CopyHookHandlers
+  risk: medium
+- description: Drag and drop handlers
+  hive: HKLM
+  path: SOFTWARE\Classes\CLSID\{000214E6-0000-0000-C000-000000000046}\InprocServer32
+  risk: medium
+- description: Column handlers
+  hive: HKLM
+  path: SOFTWARE\Classes\CLSID\{000214F2-0000-0000-C000-000000000046}\InprocServer32
+  risk: medium
+- description: 'Identified via threat intel: Rule-based analysis of potential registry
+    threats'
+  hive: HKCU
+  path: software\\sysinternals
+  risk: high
+- description: 'Identified via threat intel: Rule-based analysis of potential registry
+    threats'
+  hive: HKCU
+  path: system\currentcontrolset\control\terminal
+  risk: high
+- description: 'Identified via threat intel: Discusses the use of registry keys for
+    persistence and potential malicious activity in Living-off-the-Land Attacks'
+  hive: HKCU
+  path: HKCU\Software\Microsoft\Windows\CurrentVersion\Run
+  risk: high
+- description: 'Identified via threat intel: Discusses the use of registry keys for
+    persistence and potential malicious activity in Living-off-the-Land Attacks'
+  hive: HKLM
+  path: HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify
+  risk: high

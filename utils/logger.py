@@ -1,13 +1,48 @@
-import threading
-import datetime
-import os
+import logging
+import sys
+import json
+from pathlib import Path
+from datetime import datetime
 
-_lock = threading.Lock()
-LOG_PATH = os.path.join(os.path.dirname(__file__), '..', 'logs', 'guardrail_log.txt')
+LOG_DIR = Path("D:/pycharm/guardrail_system/logs")
+LOG_DIR.mkdir(parents=True, exist_ok=True)
 
-def log_event(event_type: str, detail: str):
-    timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    entry = f'[{timestamp}] [{event_type}] {detail}\n'
-    with _lock:
-        with open(LOG_PATH, 'a', encoding='utf-8') as f:
-            f.write(entry)
+def setup_logging(log_file_name: str = "training.log"):
+    """
+    Sets up a centralized logger for the application.
+    This should be called only once at the application entry point.
+    """
+    log_file = LOG_DIR / log_file_name
+    
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.StreamHandler(sys.stdout),
+            logging.FileHandler(log_file, mode='a')
+        ],
+        force=True  # Override any existing configurations
+    )
+    logging.info("Logging configured. Log file at: %s", log_file)
+
+def get_logger(name: str) -> logging.Logger:
+    """Retrieves a logger instance."""
+    return logging.getLogger(name)
+
+def log_event(event_type: str, message: str, **kwargs):
+    """
+    Logs a structured event with timestamp and additional context.
+    
+    Args:
+        event_type: Type of event (e.g., 'ANALYSIS', 'ERROR')
+        message: The message to log with placeholders for kwargs
+        **kwargs: Additional context to include in the log
+    """
+    logger = get_logger(__name__)
+    log_data = {
+        "timestamp": datetime.utcnow().isoformat(),
+        "event": event_type,
+        "message": message.format(**kwargs) if kwargs else message,
+        **kwargs
+    }
+    logger.info(json.dumps(log_data))

@@ -1,0 +1,64 @@
+commandline_indicators:
+  # PowerShell obfuscation
+  - name: "Encoded Command"
+    pattern: "-encodedcommand"
+    tags: ["powershell", "obfuscation"]
+    description: "PowerShell encoded command parameter"
+    
+  - name: "Short Encoded Command"
+    pattern: "-e "
+    tags: ["powershell", "obfuscation"]
+    description: "Short form of encoded command"
+    
+  - name: "Bypass Execution Policy"
+    pattern: "-ep bypass"
+    tags: ["powershell", "bypass"]
+    description: "Bypass PowerShell execution policy"
+    
+  - name: "Execution Policy Bypass"
+    pattern: "-executionpolicy bypass"
+    tags: ["powershell", "bypass"]
+    description: "Bypass PowerShell execution policy (long form)"
+    
+  - name: "Invoke Expression"
+    pattern: "iex"
+    tags: ["powershell", "execution"]
+    description: "Short form of Invoke-Expression"
+    
+  - name: "Invoke Web Request"
+    pattern: "invoke-webrequest"
+    tags: ["powershell", "download"]
+    description: "PowerShell web request cmdlet"
+    
+  # Registry manipulation
+  - name: "Registry Add"
+    pattern: "reg add"
+    tags: ["registry", "persistence"]
+    description: "Registry add command"
+    
+  - name: "Registry Delete"
+    pattern: "reg delete"
+    tags: ["registry", "persistence"]
+    description: "Registry delete command"
+    
+  # File operations
+  - name: "Copy Item"
+    pattern: "copy-item"
+    tags: ["file_operation"]
+    description: "PowerShell copy item cmdlet"
+    
+  - name: "Remove Item"
+    pattern: "remove-item"
+    tags: ["file_operation"]
+    description: "PowerShell remove item cmdlet"
+    
+  # Network activity
+  - name: "Download"
+    pattern: "download"
+    tags: ["download"]
+    description: "Download keyword"
+    
+  - name: "Web Client"
+    pattern: "webclient"
+    tags: ["download"]
+    description: "Web client reference"

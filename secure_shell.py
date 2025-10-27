@@ -2,8 +2,10 @@ import subprocess
 import ctypes
 from ai.mistral_analysis import analyze_text
 from utils.logger import log_event
+from utils.url_checker import is_malicious_url, extract_urls_from_command, command_might_contain_url
 
-def is_dangerous_by_ai(response) -> (bool, str):
+
+def is_dangerous_by_ai(response):
     """
     Determine danger from AI response.
     - If response is dict and has DANGEROUS=True, return (True, reason).
@@ -30,10 +32,10 @@ def show_block_popup(command: str, reason: str) -> bool:
     Returns True if user chooses CONTINUE (OK), False if BLOCK (Cancel).
     """
     text = (
-        f"⚠️ Dangerous Command Detected\n\n"
+        "⚠️ Dangerous Command Detected\n\n"
         f"Command:\n{command}\n\n"
         f"Reason:\n{reason}\n\n"
-        f"Do you want to CONTINUE?"
+        "Do you want to CONTINUE?"
     )
     choice = ctypes.windll.user32.MessageBoxW(0, text, "Guardrail Alert", 1)
     return choice == 1  # 1 = OK, 2 = Cancel
@@ -42,12 +44,12 @@ def execute_command(command: str):
     """Run the actual command in the shell."""
     try:
         subprocess.run(command, shell=True)
-    except Exception as e:
-        log_event("SECURE_SHELL_EXEC_ERROR", f"{command} | Error: {e}")
+    except (subprocess.SubprocessError, OSError) as e:
+        log_event(event_type="SECURE_SHELL_EXEC_ERROR", message="{command} | Error: {error}", command=command, error=e)
         print(f"[ERROR] Execution failed: {e}")
 
 def shell_loop():
-    log_event("SECURE_SHELL_START", "Secure Shell started.")
+    log_event(event_type="SECURE_SHELL_START", message="Secure Shell started.")
     while True:
         try:
             command = input("C:\\> ").strip()
@@ -55,29 +57,43 @@ def shell_loop():
                 continue
             if command.lower() in ("exit", "quit"):
                 print("Exiting Secure Shell.")
-                log_event("SECURE_SHELL_EXIT", "User exited Secure Shell.")
+                log_event(event_type="SECURE_SHELL_EXIT", message="User exited Secure Shell.")
                 break
 
-            log_event("CMD_INPUT", command)
+            log_event(event_type="CMD_INPUT", message=command)
+
+            # Only check for malicious URLs if the command might contain URLs
+            if command_might_contain_url(command):
+                # Extract URLs from the command
+                urls = extract_urls_from_command(command)
+                for url in urls:
+                    if is_malicious_url(url):
+                        log_event(event_type="CMD_MALICIOUS_URL", message="{command} | Malicious URL detected: {url}", command=command, url=url)
+                        if not show_block_popup(command, f"Malicious URL detected: {url}"):
+                            log_event(event_type="CMD_BLOCKED", message="{command} blocked due to malicious URL", command=command)
+                            print("[Guardrail] Command blocked due to malicious URL.\n")
+                            continue
+                        else:
+                            log_event(event_type="CMD_URL_ALLOWED", message="{command} URL check overridden by user", command=command)
 
             # Single AI call expecting a dict
             ai_result = analyze_text(f"CMD: {command}")
-            log_event("CMD_AI_RESPONSE", f"{command} | AI: {ai_result}")
+            log_event(event_type="CMD_AI_RESPONSE", message="{command} | AI: {ai_result}", command=command, ai_result=ai_result)
 
             # Determine if dangerous
             is_dangerous, reason = is_dangerous_by_ai(ai_result)
 
             if is_dangerous:
-                log_event("CMD_FLAGGED", f"{command} | Reason: {reason}")
+                log_event(event_type="CMD_FLAGGED", message="{command} | Reason: {reason}", command=command, reason=reason)
                 if not show_block_popup(command, reason):
-                    log_event("CMD_BLOCKED", f"{command} blocked by user")
+                    log_event(event_type="CMD_BLOCKED", message="{command} blocked by user", command=command)
                     print("[Guardrail] Command blocked.\n")
                     continue
                 else:
-                    log_event("CMD_ALLOWED", f"{command} allowed by user")
+                    log_event(event_type="CMD_ALLOWED", message="{command} allowed by user", command=command)
 
             else:
-                log_event("CMD_SAFE", f"{command} deemed safe")
+                log_event(event_type="CMD_SAFE", message="{command} deemed safe", command=command)
 
             # Execute if safe or allowed
             execute_command(command)
@@ -85,8 +101,8 @@ def shell_loop():
         except KeyboardInterrupt:
             print("\n[Guardrail] KeyboardInterrupt received. Use 'exit' to quit.")
             continue
-        except Exception as e:
-            log_event("SECURE_SHELL_ERROR", str(e))
+        except (RuntimeError, OSError) as e:
+            log_event(event_type="SECURE_SHELL_ERROR", message="{error}", error=str(e))
             print(f"[Guardrail Error] {e}")
 
 if __name__ == "__main__":

@@ -1,0 +1,5 @@
+# Enhanced Registry Monitoring Module Requirements
+pywin32>=302
+PyYAML>=6.0
+feedparser>=6.0.0
+schedule>=1.2.0

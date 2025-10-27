@@ -1,0 +1,26 @@
+{
+  "label2id": {
+    "Qakbot": 0,
+    "Swisyn": 1,
+    "Emotet": 2,
+    "Lokibot": 3,
+    "Zeus": 4,
+    "Trickbot": 5,
+    "Ursnif": 6,
+    "HarHar": 7,
+    "njRAT": 8,
+    "Adload": 9
+  },
+  "id2label": {
+    "0": "Qakbot",
+    "1": "Swisyn",
+    "2": "Emotet",
+    "3": "Lokibot",
+    "4": "Zeus",
+    "5": "Trickbot",
+    "6": "Ursnif",
+    "7": "HarHar",
+    "8": "njRAT",
+    "9": "Adload"
+  }
+}

@@ -1,0 +1,96 @@
+process_indicators:
+  # Scripting engines
+  - name: "Command Prompt"
+    pattern: "cmd.exe"
+    tags: ["execution", "lolbin"]
+    description: "Windows Command Processor"
+    
+  - name: "PowerShell"
+    pattern: "powershell.exe"
+    tags: ["execution", "lolbin", "scripting"]
+    description: "Windows PowerShell"
+    
+  - name: "Windows Script Host"
+    pattern: "wscript.exe"
+    tags: ["execution", "lolbin", "scripting"]
+    description: "Windows Script Host"
+    
+  - name: "Console Script Host"
+    pattern: "cscript.exe"
+    tags: ["execution", "lolbin", "scripting"]
+    description: "Console Script Host"
+    
+  - name: "HTML Application"
+    pattern: "mshta.exe"
+    tags: ["execution", "lolbin"]
+    description: "Microsoft HTML Application Host"
+    
+  - name: "MSBuild"
+    pattern: "msbuild.exe"
+    tags: ["execution", "lolbin", "build"]
+    description: "Microsoft Build Engine"
+    
+  - name: "Install Utility"
+    pattern: "installutil.exe"
+    tags: ["execution", "lolbin"]
+    description: "Installation Utility"
+    
+  - name: "Assembly Registration"
+    pattern: "regasm.exe"
+    tags: ["execution", "lolbin"]
+    description: "Assembly Registration Utility"
+    
+  - name: "Service Registration"
+    pattern: "regsvcs.exe"
+    tags: ["execution", "lolbin"]
+    description: "Service Registration Utility"
+    
+  - name: "Windows Management Instrumentation"
+    pattern: "wmic.exe"
+    tags: ["enumeration", "lolbin"]
+    description: "Windows Management Instrumentation Command"
+    
+  - name: "Certificate Utility"
+    pattern: "certutil.exe"
+    tags: ["download", "lolbin", "encode"]
+    description: "Certificate Utility"
+    
+  - name: "Background Intelligent Transfer"
+    pattern: "bitsadmin.exe"
+    tags: ["download", "lolbin", "persistence"]
+    description: "Background Intelligent Transfer Utility"
+    
+  - name: "Dynamic Link Library Loader"
+    pattern: "rundll32.exe"
+    tags: ["execution", "lolbin"]
+    description: "Run DLL Utility"
+    
+  - name: "ActiveX Registration"
+    pattern: "regsvr32.exe"
+    tags: ["execution", "lolbin"]
+    description: "ActiveX Registration Utility"
+    
+  - name: "Windows Installer"
+    pattern: "msiexec.exe"
+    tags: ["execution", "lolbin", "installer"]
+    description: "Windows Installer"
+    
+  - name: "Control Panel"
+    pattern: "control.exe"
+    tags: ["execution", "lolbin"]
+    description: "Control Panel"
+    
+  - name: "Task Scheduler"
+    pattern: "schtasks.exe"
+    tags: ["execution", "lolbin", "persistence"]
+    description: "Task Scheduler Utility"
+    
+  - name: "Service Control"
+    pattern: "sc.exe"
+    tags: ["persistence", "lolbin"]
+    description: "Service Control Utility"
+    
+  - name: "Registry Utility"
+    pattern: "reg.exe"
+    tags: ["persistence", "lolbin"]
+    description: "Registry Utility"

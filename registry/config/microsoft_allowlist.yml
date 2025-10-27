@@ -1,0 +1,91 @@
+microsoft_allowlist:
+  # Microsoft signed processes that should not trigger alerts
+  - process: "svchost.exe"
+    description: "Generic host process for Windows services"
+  
+  - process: "explorer.exe"
+    description: "Windows shell and file manager"
+  
+  - process: "winlogon.exe"
+    description: "Windows logon manager"
+  
+  - process: "lsass.exe"
+    description: "Local Security Authority Subsystem Service"
+  
+  - process: "csrss.exe"
+    description: "Client/Server Runtime Subsystem"
+  
+  - process: "smss.exe"
+    description: "Session Manager Subsystem"
+  
+  - process: "services.exe"
+    description: "Windows Service Control Manager"
+  
+  - process: "dwm.exe"
+    description: "Desktop Window Manager"
+  
+  - process: "taskhost.exe"
+    description: "Task Host Process"
+  
+  - process: "taskhostw.exe"
+    description: "Task Host Window Services"
+  
+  - process: "runtimebroker.exe"
+    description: "Runtime Broker"
+  
+  - process: "fontdrvhost.exe"
+    description: "Font Driver Host"
+  
+  - process: "conhost.exe"
+    description: "Console Window Host"
+  
+  - process: "audiodg.exe"
+    description: "Windows Audio Device Graph Isolation"
+  
+  - process: "wlanext.exe"
+    description: "Windows WLAN AutoConfig Client Side"
+  
+  - process: "wudfhost.exe"
+    description: "Windows User Mode Driver Framework Host Process"
+  
+  - process: "dllhost.exe"
+    description: "COM Surrogate"
+  
+  - process: "sihost.exe"
+    description: "Shell Infrastructure Host"
+  
+  - process: "searchindexer.exe"
+    description: "Windows Search Indexer"
+  
+  - process: "searchprotocolhost.exe"
+    description: "Search Protocol Host"
+  
+  - process: "searchfilterhost.exe"
+    description: "Search Filter Host"
+  
+  - process: "backgroundtaskhost.exe"
+    description: "Background Task Host"
+  
+  - process: "applicationframehost.exe"
+    description: "Application Frame Host"
+  
+  - process: "userinit.exe"
+    description: "User Init Process"
+  
+  - process: "werfault.exe"
+    description: "Windows Error Reporting"
+  
+  - process: "wermgr.exe"
+    description: "Windows Error Reporting Manager"
+  
+  - process: "wscadminui.exe"
+    description: "Windows Security Center Admin UI"
+  
+  - process: "securityhealthservice.exe"
+    description: "Windows Security Service"
+  
+  - process: "windowsdefenderapplicationguard.exe"
+    description: "Windows Defender Application Guard"
+  
+  - process: "mrt.exe"
+    description: "Microsoft Windows Malicious Software Removal Tool"

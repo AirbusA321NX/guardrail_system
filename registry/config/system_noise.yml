@@ -1,0 +1,91 @@
+system_noise_allowlist:
+  # Common system noise patterns that should be filtered out
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\FeatureUsage"
+    description: "Explorer feature usage tracking"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\UserAssist"
+    description: "UserAssist registry keys for tracking application usage"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\MountPoints2"
+    description: "Mount points tracking"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RecentDocs"
+    description: "Recently accessed documents"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\RunMRU"
+    description: "Run dialog history"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\TypedPaths"
+    description: "Typed paths history"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\ComDlg32"
+    description: "Common dialog tracking"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Wallpapers"
+    description: "Wallpaper settings"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced"
+    description: "Explorer advanced settings"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Streams"
+    description: "Explorer streams data"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Applets"
+    description: "Applets settings"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings"
+    description: "Internet settings (browser updates)"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Group Policy"
+    description: "Group policy updates"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Policies"
+    description: "Policy updates"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\WindowsUpdate"
+    description: "Windows Update settings"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Telephony"
+    description: "Telephony settings"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Setup"
+    description: "Setup and installation tracking"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Installer"
+    description: "Installer tracking"
+  
+  - pattern: "Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall"
+    description: "Uninstall tracking"
+  
+  - pattern: "Software\\Microsoft\\Windows\\ShellNoRoam"
+    description: "Shell settings"
+  
+  - pattern: "Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon"
+    description: "Winlogon settings (legitimate updates)"
+  
+  - pattern: "Software\\Microsoft\\Windows NT\\CurrentVersion\\NetworkList"
+    description: "Network list updates"
+  
+  - pattern: "Software\\Microsoft\\Windows NT\\CurrentVersion\\Print"
+    description: "Print settings"
+  
+  - pattern: "Software\\Microsoft\\Windows NT\\CurrentVersion\\Devices"
+    description: "Device settings"
+  
+  - pattern: "Software\\Microsoft\\Tracing"
+    description: "Tracing settings"
+  
+  - pattern: "Software\\Microsoft\\SQMClient"
+    description: "Software Quality Metrics client"
+  
+  - pattern: "Software\\Microsoft\\Reliability Analysis"
+    description: "Reliability analysis data"
+  
+  - pattern: "Software\\Microsoft\\PCHealth"
+    description: "PC Health check"
+  
+  - pattern: "Software\\Microsoft\\Windows Script Host\\Settings"
+    description: "WSH settings (legitimate)"
+  
+  - pattern: "Software\\Policies\\Microsoft"
+    description: "Microsoft policy settings"

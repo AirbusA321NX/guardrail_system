@@ -1,184 +1,63 @@
-import time
-import win32api
-import win32con
-import winreg
-import hashlib
-import os
-import winerror  # <--- ADDED THIS IMPORT for ERROR_NO_MORE_ITEMS
+#!/usr/bin/env python3
+"""
+Registry Monitor Module
 
-from utils.logger import log_event
-from utils.popups import show_popup
-from ai.mistral_analysis import analyze_text
-
-REG_NOTIFY_CHANGE_LAST_SET = 0x00000004
-REG_NOTIFY_CHANGE_NAME = 0x00000001
-
-_SERVICES_PATH = r"SYSTEM\CurrentControlSet\Services"
-
-
-def _hash_key_values(root, subkey_path):
-    r"""
-Returns a dict: { value_name: sha256_of_value_data } for all values under root\subkey_path.
+This module provides registry monitoring capabilities using the enhanced ETW-based implementation.
 """
 
-    result = {}
-    try:
-        key = winreg.OpenKey(root, subkey_path, 0, winreg.KEY_READ)
-    except FileNotFoundError:
-        return result
-    except Exception as e:
-        log_event("REGISTRY_HASH_OPEN_ERROR", f"Error opening key {subkey_path}: {e}")
-        return result
+import sys
+import os
+import time
+import argparse
 
+# Add the parent directory to the path so we can import modules
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
+from registry.etw_registry_monitor import ETWRegistryMonitor
+from utils.logger import log_event
+
+def main():
+    """Main entry point for the registry monitor"""
+    parser = argparse.ArgumentParser(description='Registry Monitoring Agent')
+    parser.add_argument('--batch-size', type=int, default=50, help='Batch size for event processing')
+    parser.add_argument('--queue-size', type=int, default=5000, help='Maximum queue size')
+    parser.add_argument('--no-threat-intel', action='store_true', help='Disable threat intelligence integration')
+    parser.add_argument('--no-ai-risk-scoring', action='store_true', help='Disable AI risk scoring')
+    
+    args = parser.parse_args()
+    
+    print("Starting Registry Monitoring Agent...")
+    print(f"Batch size: {args.batch_size}")
+    print(f"Queue size: {args.queue_size}")
+    print(f"Threat intelligence: {'Disabled' if args.no_threat_intel else 'Enabled'}")
+    print(f"AI risk scoring: {'Disabled' if args.no_ai_risk_scoring else 'Enabled'}")
+    
+    # Create monitor instance
+    monitor = ETWRegistryMonitor(batch_size=args.batch_size, queue_max_size=args.queue_size)
+    
+    # Disable AI risk scoring if requested
+    if args.no_ai_risk_scoring:
+        monitor.ai_risk_scoring_enabled = False
+    
     try:
-        i = 0
+        # Start monitoring
+        monitor.start_monitoring(enable_threat_intel=not args.no_threat_intel)
+        
+        print("Registry monitoring started. Press Ctrl+C to stop.")
+        
+        # Keep running
         while True:
-            try:
-                name, data, _ = winreg.EnumValue(key, i)
-                if isinstance(data, str):   
-                    raw = data.encode('utf-16le')
-                elif isinstance(data, bytes):
-                    raw = data
-                else:
-                    raw = str(data).encode()
-                h = hashlib.sha256(raw).hexdigest()
-                result[name] = h
-                i += 1
-            except OSError as e:
-                # Use winerror.ERROR_NO_MORE_ITEMS
-                if e.winerror == winerror.ERROR_NO_MORE_ITEMS:  # <--- CHANGED HERE
-                    break
-                else:
-                    log_event("REGISTRY_HASH_ENUM_ERROR", f"Error enumerating value {i} under {subkey_path}: {e}")
-                    break
-    finally:
-        winreg.CloseKey(key)
-    return result
-
-
-def _snapshot_all_services():
-    """
-    Takes a snapshot of all service keys and their hashed values.
-    """
-    snapshot = {}
-    try:
-        root = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, _SERVICES_PATH, 0, winreg.KEY_READ)
-    except FileNotFoundError:
-        log_event("REGISTRY_SNAPSHOT_ROOT_NOT_FOUND", f"Services root path {_SERVICES_PATH} not found.")
-        return snapshot
+            time.sleep(1)
+            
+    except KeyboardInterrupt:
+        print("\nStopping registry monitoring...")
     except Exception as e:
-        log_event("REGISTRY_SNAPSHOT_OPEN_ERROR", f"Error opening services root: {e}")
-        return snapshot
-
-    try:
-        i = 0
-        while True:
-            try:
-                sub = winreg.EnumKey(root, i)
-                full = os.path.join(_SERVICES_PATH, sub)
-                snapshot[full] = _hash_key_values(winreg.HKEY_LOCAL_MACHINE, full)
-                i += 1
-            except OSError as e:
-                # Use winerror.ERROR_NO_MORE_ITEMS
-                if e.winerror == winerror.ERROR_NO_MORE_ITEMS:  # <--- CHANGED HERE
-                    break
-                else:
-                    log_event("REGISTRY_SNAPSHOT_ENUM_ERROR",
-                              f"Error enumerating subkey {i} under {_SERVICES_PATH}: {e}")
-                    break
+        log_event("REGISTRY_MONITOR_ERROR", f"Unexpected error: {e}")
+        print(f"Error: {e}")
     finally:
-        winreg.CloseKey(root)
-    return snapshot
+        # Stop monitoring
+        monitor.stop_monitoring()
+        print("Registry monitoring stopped.")
 
-
-def _monitor_loop():
-    prev_snapshot = _snapshot_all_services()
-    hkey = None
-
-    try:
-        hkey = win32api.RegOpenKeyEx(
-            int(win32con.HKEY_LOCAL_MACHINE),
-            _SERVICES_PATH,
-            0,
-            int(win32con.KEY_READ | win32con.KEY_NOTIFY)
-        )
-
-        while True:
-            try:
-                # Expected type 'PyHKEY', got 'int' instead
-                # Expected type 'bool', got 'int' instead (for True/False)
-                # These warnings are likely static analysis issues with win32api stubs,
-                # the runtime behavior should be correct as PyHANDLE objects are often
-                # implicitly castable or handled correctly by the underlying C functions.
-                win32api.RegNotifyChangeKeyValue(
-                    hkey,
-                    True,
-                    REG_NOTIFY_CHANGE_NAME | REG_NOTIFY_CHANGE_LAST_SET,
-                    0,
-                    False
-                )
-
-                time.sleep(0.01)
-                new_snapshot = _snapshot_all_services()
-
-                # Compare snapshots
-                for key_path, new_vals in new_snapshot.items():
-                    old_vals = prev_snapshot.get(key_path, {})
-                    for name, h in new_vals.items():
-                        if name not in old_vals:
-                            detail = f"New registry value '{name}' under '{key_path}'"
-                            _flag_registry_change(detail)
-                        elif old_vals[name] != h:
-                            detail = f"Modified registry value '{name}' under '{key_path}'"
-                            _flag_registry_change(detail)
-                    for name in old_vals:
-                        if name not in new_vals:
-                            detail = f"Deleted registry value '{name}' under '{key_path}'"
-                            _flag_registry_change(detail)
-
-                for key_path in set(prev_snapshot) - set(new_snapshot):
-                    detail = f"Deleted registry key '{key_path}' under Services"
-                    _flag_registry_change(detail)
-
-                for key_path in set(new_snapshot) - set(prev_snapshot):
-                    detail = f"New registry key '{key_path}' under Services"
-                    _flag_registry_change(detail)
-
-                prev_snapshot = new_snapshot
-
-            except Exception as e:
-                log_event("REGISTRY_MONITOR_ERROR", str(e))
-                time.sleep(5)
-
-    finally:
-        if hkey:
-            win32api.RegCloseKey(hkey)
-
-
-def _flag_registry_change(detail: str):
-    if not any(term in detail.lower() for term in
-               ["cmd.exe", "powershell", "terminal", "shell", "bash", "command prompt"]):
-        log_event("IGNORED_CHANGE", f"Ignoring: {detail}")
-        return
-    try:
-        result = analyze_text(f"REGISTRY_CHANGE: {detail}")
-    except Exception as e:
-        log_event("AI_ANALYSIS_FAILURE", f"AI analysis failed for registry change '{detail}': {e}")
-        show_popup("Guardrail AI Failure", "AI analysis failed for registry change. Restarting AI service.")
-        try:
-            analyze_text("ping")
-        except:
-            pass
-        return
-
-    lower = result.lower()
-    if any(k in lower for k in
-           ["danger", "disable", "malicious", "unauthorized", "suspicious", "threat", "compromised"]):
-        show_popup("Guardrail Alert: Registry Change", result)
-        log_event("REGISTRY_FLAGGED", f"{detail} | AI: {result}")
-    else:
-        log_event("REGISTRY_INFO", f"{detail} | AI: {result}")
-
-
-def start_monitor():
-    _monitor_loop()
+if __name__ == "__main__":
+    main()

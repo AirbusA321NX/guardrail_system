@@ -1,5 +1,3 @@
-# monitor/intel/threat_intel_bridge.py
-
 import os
 import time
 import json

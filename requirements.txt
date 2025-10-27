@@ -70,3 +70,4 @@ pytesseract~=0.3.13
 python-kubernetes~=0.2
 pydantic_core~=2.33.2
 docker-py~=1.10.6
+comtypes~=1.4.8
