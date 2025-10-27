@@ -1,393 +1,395 @@
-# Guardrail Security System
+# Guardrail System
 
-An advanced security monitoring and threat detection framework that integrates signature-based detection with machine learning-powered behavioral analysis. The system is engineered to identify both known and unknown threats through a combination of static analysis, dynamic analysis, and behavioral monitoring.
+A comprehensive security monitoring and threat detection platform that leverages AI-powered analysis to identify and respond to potential security threats in real-time.
+
+## Overview
+
+Guardrail System is an advanced security solution that combines multiple monitoring modules with AI-powered threat intelligence to provide comprehensive protection for Windows systems. The system monitors registry changes, process behavior, system services, file activities, and system settings to detect potential security threats.
+
+The system uses the Mistral 7B model via Ollama for intelligent threat analysis, enhanced with real-world malware examples from the Avast CTU CAPEv2 dataset to improve detection accuracy. It implements a Retrieval-Augmented Generation (RAG) pipeline to provide context-aware threat analysis.
+
+## Key Features
+
+### AI-Powered Threat Detection
+- Utilizes the Mistral 7B model via Ollama for advanced threat analysis
+- Integrates with the Avast CTU CAPEv2 dataset to enhance AI decision-making with real-world malware examples
+- Implements Retrieval-Augmented Generation (RAG) to provide context-aware threat analysis
+- Features dual analysis modes:
+  - Threat Intelligence Analysis for RSS feeds
+  - File Content Analysis for archive scanning
+- AI risk scoring for registry events with explainability
+
+### Multi-Layered Monitoring
+- **Registry Monitoring**: Real-time monitoring of registry changes using ETW (Event Tracing for Windows)
+- **Process Monitoring**: Tracks running processes and identifies suspicious behavior
+- **Service Monitoring**: Monitors system services for unauthorized changes
+- **File System Scanning**: Scans files and directories for potential threats
+- **Archive Analysis**: Deep scanning of compressed archives for malicious content
+- **Settings Monitoring**: Monitors critical system settings for unauthorized changes
+
+### Threat Intelligence Integration
+- Processes RSS feeds from leading security sources (Malwarebytes, CrowdStrike, Krebs on Security, etc.)
+- Automatically updates monitoring configurations based on latest threat intelligence
+- Deduplicates processed articles to avoid redundant analysis
+- Generates actionable reports with confidence scoring
+- Suggests applications for removal based on security threats
+
+### Real-Time System Metrics
+- CPU/GPU usage monitoring with visual indicators
+- Temperature monitoring for system health
+- RAM and storage utilization tracking
+- Ollama service status monitoring with visual feedback
 
 ## System Architecture
 
-The system is built on a modular architecture with the following core components:
+```mermaid
+graph TD
+    A[Main Application] --> B[AI Analysis Engine]
+    A --> C[Threat Intelligence Modules]
+    A --> D[System Monitoring Agents]
+    A --> E[Data Processing Pipeline]
+    
+    B --> B1[Mistral 7B Model]
+    B --> B2[RAG Pipeline]
+    B --> B3[Risk Scoring Engine]
+    
+    C --> C1[RSS Feed Processor]
+    C --> C2[Threat Intel Scheduler]
+    C --> C3[Report Generator]
+    
+    D --> D1[Registry Monitor]
+    D --> D2[Process Monitor]
+    D --> D3[Service Monitor]
+    D --> D4[File System Scanner]
+    D --> D5[Settings Monitor]
+    D --> D6[Archive Analyzer]
+    
+    E --> E1[Configuration Manager]
+    E --> E2[Logging System]
+    E --> E3[Alert System]
+```
 
-1. **Monitoring Layer**: Real-time process, registry, and system call monitoring
-2. **Analysis Engine**: ML-powered behavioral analysis and anomaly detection
-3. **Threat Intelligence**: Integration with multiple threat feeds and IOC databases
-4. **Response Module**: Automated containment and remediation capabilities
+### Core Components
 
-## Key Components
+1. **Main Application** ([main.py](main.py)): Central UI and system coordinator
+2. **AI Engine** ([ai/](ai/)): Mistral 7B integration with RAG pipeline
+3. **Registry Monitoring** ([registry/](registry/)): ETW-based registry change detection
+4. **Process Monitoring** ([monitor/process_monitor.py](monitor/process_monitor.py)): Real-time process tracking
+5. **Service Monitoring** ([service_monitor.py](service_monitor.py)): System service surveillance
+6. **File Analysis** ([system_scan.py](system_scan.py), [advanced_archive_scanner.py](advanced_archive_scanner.py)): Comprehensive file scanning
+7. **Settings Monitoring** ([monitor/settings_monitor.py](monitor/settings_monitor.py)): Critical system settings surveillance
 
-### Core Security Modules
-- **Process Monitoring**: Real-time monitoring of system processes for suspicious activities
-- **Registry Monitoring**: Tracks changes to Windows registry for potential threats
-- **Service Monitoring**: Windows service analysis with AI-powered threat detection
-- **Settings Monitoring**: Comprehensive Windows Defender settings monitoring
-- **Behavioral Analysis**: AI-powered analysis of process behavior to detect anomalies
-- **System Scanning**: Comprehensive system scanning for vulnerabilities and threats
-- **Container Runtime Monitoring**: Security monitoring for containerized environments
+## Data Flow Diagram
 
-### AI/ML Capabilities
-- **Anomaly Detection**: Unsupervised learning to detect unknown threats
-- **Behavioral Analysis**: Deep learning models to analyze and classify process behavior
-- **Threat Intelligence**: Integration with threat intelligence feeds using Mistral 7B AI
-- **Meta-learning**: Rapid adaptation to new threats
-- **On-device Learning**: Model updates without compromising privacy
+```mermaid
+graph LR
+    A[External Data Sources] --> B[Data Ingestion Layer]
+    B --> C[Processing & Analysis]
+    C --> D[AI Decision Engine]
+    D --> E[Response Actions]
+    E --> F[Reporting & Logging]
+    
+    A1[RSS Feeds] --> A
+    A2[Registry Events] --> A
+    A3[Process Events] --> A
+    A4[File System] --> A
+    
+    C --> C1[Threat Intelligence Analysis]
+    C --> C2[Behavioral Analysis]
+    C --> C3[Pattern Matching]
+    
+    D --> D1[Mistral 7B AI]
+    D --> D2[Risk Scoring]
+    D --> D3[Confidence Assessment]
+    
+    E --> E1[Alerts]
+    E --> E2[Process Termination]
+    E --> E3[Registry Rollback]
+    E --> E4[Report Generation]
+```
 
-### Advanced Features
-- **Secure Shell**: Encrypted command-line interface for secure access
-- **Forensic Analysis**: Tools for post-incident investigation including memory capture
-- **Threat Hunting**: Proactive search for indicators of compromise
-- **Custom Rule Engine**: Define and enforce security policies
-- **MLflow Tracking**: Audit trail of all AI decisions for compliance and debugging
+## Dashboard Preview
 
-## System Requirements
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    GUARDRAIL SYSTEM DASHBOARD               │
+├─────────────────────────────────────────────────────────────┤
+│ STATUS: ACTIVE        AI ENGINE: ONLINE        RSS FEEDS: 7 │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  [■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■] CPU: 24%       │
+│  [■■■■■■■■■■■■■■■■■■■■                    ] RAM: 52%       │
+│  [■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■] GPU: 18%       │
+│  [■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■] TEMP: 42°C    │
+│                                                             │
+├─────────────────────────────────────────────────────────────┤
+│ RECENT THREATS DETECTED                                     │
+│ ┌─────────────────────────────────────────────────────────┐ │
+│ │ HIGH: Registry modification in HKLM\Software\Microsoft  │ │
+│ │ MED: Suspicious process launch (powershell.exe)         │ │
+│ │ LOW: Unusual network connection from svchost.exe        │ │
+│ └─────────────────────────────────────────────────────────┘ │
+├─────────────────────────────────────────────────────────────┤
+│ THREAT INTELLIGENCE UPDATES                                 │
+│ Last Update: 2 hours ago                                    │
+│ Next Update: 4 hours                                        │
+│ Articles Processed Today: 24                                │
+└─────────────────────────────────────────────────────────────┘
+```
 
-### Hardware
-- CPU: x86_64 with AVX2 support (Intel Haswell or newer, AMD Excavator or newer)
-- RAM: 16GB minimum, 32GB recommended for production use
-- Storage: 50GB free space (SSD recommended)
-- GPU: NVIDIA CUDA-compatible GPU with 8GB+ VRAM (for ML acceleration)
+## Installation
 
-### Software Dependencies
-- Python 3.10+
-- CUDA 11.8+ (for GPU acceleration)
-- cuDNN 8.6+ (for deep learning acceleration)
-- Windows 10/11 x64 or Linux (Ubuntu 20.04+)
-- Ollama service for AI analysis (running on http://127.0.0.1:11434)
-- MLflow server (optional, for tracking at http://localhost:5000)
+### Prerequisites
+- Windows 10/11 (with administrator privileges)
+- Python 3.8 or higher
+- Ollama with Mistral 7B model
+- Git (for cloning the repository)
 
-### Installation
+### Setup Instructions
 
-1. **Clone the repository**
+1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/guardrail_system.git
+   git clone https://github.com/AirbusA321NX/guardrail_system.git
    cd guardrail_system
    ```
 
-2. **Create and activate a virtual environment**
-   ```bash
-   python -m venv venv310
-   .\venv310\Scripts\activate  # Windows
-   # or
-   source venv310/bin/activate  # Linux/Mac
-   ```
-
-3. **Install dependencies**
+2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Set up Ollama service**
-   - Install Ollama from https://ollama.ai
-   - Pull the Mistral 7B model: `ollama pull mistral:7b`
-
-5. **Set up environment variables**
-   Create a `.env` file in the project root with the following variables:
-   ```
-   # API Keys (if applicable)
-   THREAT_INTEL_API_KEY=your_api_key_here
-   
-   # Paths
-   DATA_DIR=./data
-   MODELS_DIR=./models
-   
-   # Logging
-   LOG_LEVEL=INFO
-   LOG_FILE=./logs/guardrail.log
-   
-   # MLflow (optional)
-   GUARDRAIL_MLFLOW_URI=http://localhost:5000
+3. Install Ollama and the Mistral 7B model:
+   ```bash
+   # Download and install Ollama from https://ollama.com/
+   ollama pull mistral:7b
    ```
 
-## System Operation
+4. Initialize the AI with security examples:
+   The system automatically initializes the RAG pipeline with examples from the included Avast CTU CAPEv2 dataset.
 
-### Initialization
+## Usage
+
+### Running the Main Application
 ```bash
-# Start the core monitoring service
-python main.py --config ./config/production.yaml
-
-# View system status
-python main.py --status
+python -m main
 ```
 
-### Model Training and Evaluation
-```bash
-# Train CAPE analyzer with custom parameters
-python -m monitor.train_cape_analyzer \
-    --dataset ./dataset/Public_Avast_CTU_CAPEv2_Dataset_Small \
-    --epochs 50 \
-    --batch-size 32 \
-    --learning-rate 1e-5
+The application requires administrator privileges to access system temperature sensors and perform comprehensive monitoring.
 
-# Evaluate model performance
-python -m monitor.train_cape_analyzer --evaluate --model-path ./models/cape_analyzer/latest
+### Running Individual Modules
+
+#### Registry Monitor
+```bash
+python -m monitor.registry_monitor
 ```
 
-### Running Security Monitors
+#### Process Monitor
 ```bash
-# Run a full system scan
-python system_scan.py --full
+python -m monitor.process_monitor
+```
 
-# Monitor processes in real-time
-python monitor/process_monitor.py
-
-# Monitor Windows services with AI analysis
-python service_monitor.py
-
-# Monitor Windows services and continue monitoring for new services
-python service_monitor.py --mode scan-and-monitor
-
-# Continuous monitoring for new services only
-python service_monitor.py --mode monitor
-
-# Monitor Windows Defender settings
-python monitor/settings_monitor.py
-
-# Run threat intelligence analyzer
+#### Threat Intelligence Analyzer
+```bash
 python -m registry.threat_intel_analyzer
-
-# Run threat intelligence scheduler
-python -m registry.threat_intel_scheduler
 ```
 
-## 🏗 Project Structure
-
-```
-guardrail_system/
-├── ai/                          # AI/ML models and analysis functions
-│   ├── mistral_analysis.py      # Mistral model integration for threat analysis
-│   ├── risk_scoring.py          # Risk scoring based on AI analysis
-│   └── static_analyzer.py       # Static file analysis with AI
-├── config/                      # Configuration files
-│   └── registry_keys.json       # Windows registry keys to monitor
-├── logs/                        # System logs
-├── models/                      # Trained models
-│   └── cape_analyzer/           # CAPE analysis models
-├── monitor/                     # Monitoring components
-│   ├── forensics/               # Digital forensics tools
-│   │   ├── forensics_timeline.py # Timeline analysis for incidents
-│   │   └── memory_capture.py    # Memory capture and analysis
-│   ├── intel/                   # Threat intelligence integration
-│   │   └── threat_intel_bridge.py # Bridge to external threat feeds
-│   ├── analyze_reports_with_ollama.py # Report analysis with Ollama
-│   ├── mlflow_model_tracker.py  # MLflow tracking for AI decisions
-│   ├── process_monitor.py       # Process monitoring
-│   ├── registry_monitor.py      # Registry monitoring
-│   ├── settings_monitor.py      # Windows Defender settings monitoring
-│   └── train_cape_analyzer.py   # CAPE model training
-├── registry/                    # Registry threat detection
-│   ├── config/                  # Configuration files for registry monitoring
-│   │   ├── commandline_patterns.yml # Suspicious command-line patterns
-│   │   ├── microsoft_allowlist.yml   # Microsoft process allowlist
-│   │   ├── process_iocs.yml          # Process indicators of compromise
-│   │   ├── registry_paths.yml        # Registry paths to monitor
-│   │   └── system_noise.yml          # System noise filtering
-│   ├── app_threat_analyzer.py   # Application threat analysis
-│   ├── app_threat_scheduler.py  # Scheduled threat analysis
-│   ├── etw_registry_monitor.py  # ETW-based registry monitoring
-│   ├── registry_scanner.py      # Registry scanning
-│   ├── threat_intel_analyzer.py # Threat intelligence analysis
-│   └── threat_intel_scheduler.py # Scheduled threat intelligence checks
-├── utils/                       # Utility functions
-│   ├── logger.py                # Logging utilities
-│   ├── popups.py                # System notifications
-│   ├── url_checker.py           # URL reputation checking
-│   └── watchdog_timer.py        # Watchdog for monitoring
-├── .gitignore
-├── advanced_archive_scanner.py  # Advanced archive scanning
-├── main.py                      # Main application entry point
-├── README.md                    # This file
-├── requirements.txt             # Python dependencies
-├── secure_shell.py              # Secure shell interface
-├── service_monitor.py           # Windows service monitoring
-├── system_scan.py               # System scanning
-└── ...
+#### Application Threat Detection
+```bash
+python -m registry.app_threat_analyzer
 ```
 
-## AI/ML Implementation Details
+#### Archive Scanner
+```bash
+python run_archive_scan.py
+```
 
-### Mistral 7B Integration
+#### System Scanner
+```bash
+python system_scan.py [directory]
+```
 
-#### Model Architecture
-- **Base Model**: Mistral 7B via Ollama service
-- **Input**: Security-related prompts with contextual information
-- **Output**: Structured JSON responses for automated processing
+#### Settings Monitor
+```bash
+python -m monitor.settings_monitor
+```
 
-#### Analysis Modes
-1. **Threat Intelligence Analysis**
-   - Input: Security articles and threat reports
-   - Output: JSON with `relevant`, `suggested_app_removals`, `confidence`, and `threat_summary`
+## AI Integration
 
-2. **Service/Process Analysis**
-   - Input: Service metadata (name, path, status, description)
-   - Output: JSON with `DANGEROUS` boolean and `reason` string
+The system leverages the Mistral 7B model through Ollama to provide intelligent threat analysis. The AI is enhanced with:
 
-#### MLflow Tracking
-- **Experiment**: "Guardrail_Mistral_AuditTrail"
-- **Tracking Server**: http://localhost:5000 (when running)
-- **Logged Data**:
-  - Input prompts
-  - AI responses
-  - Metadata (module type, timestamp, etc.)
-  - Run parameters
+- **Retrieval-Augmented Generation (RAG)**: Context-aware responses using examples from the Avast CTU CAPEv2 dataset
+- **Dual Analysis Modes**: Specialized processing for different threat types
+- **Confidence Scoring**: Quantifiable trust metrics for AI decisions
+- **Risk Scoring for Registry Events**: AI-powered risk assessment for registry changes
 
-### CAPE Analyzer Architecture
+The system uses examples from the Avast CTU CAPEv2 dataset to provide real-world context to the AI model, enabling it to make more informed decisions about potential threats.
 
-#### Model Architecture
-- **Base Model**: DeBERTa-base (900M parameters)
-- **Input**: JSON reports (max 512 tokens)
-- **Output**: Threat classification + confidence score
+### AI Analysis Modules
 
-#### Training Process
-1. **Data Preparation**
-   - Input: Raw CAPE sandbox reports
-   - Preprocessing: Tokenization, sequence padding, label encoding
-   - Train/Validation/Test split: 70/15/15
+1. **Mistral Analysis** ([ai/mistral_analysis.py](ai/mistral_analysis.py)): Core AI analysis engine with RAG pipeline
+2. **Risk Scoring** ([ai/risk_scoring.py](ai/risk_scoring.py)): AI-powered risk scoring for registry events
+3. **Static Analyzer** ([ai/static_analyzer.py](ai/static_analyzer.py)): Static file analysis with AI-powered threat detection
+4. **Archive Scanner** ([advanced_archive_scanner.py](advanced_archive_scanner.py)): AI-powered analysis of archive files
 
-2. **Model Configuration**
-   ```yaml
-   training:
-     batch_size: 32
-     learning_rate: 1e-5
-     num_epochs: 50
-     warmup_steps: 500
-     weight_decay: 0.01
-   
-   model:
-     hidden_dropout_prob: 0.1
-     attention_probs_dropout_prob: 0.1
-     classifier_dropout: 0.1
-   ```
+## Configuration
 
-### Behavioral Analysis Engine
+All modules use YAML-based configuration files stored in the [registry/config/](registry/config/) directory:
 
-#### Feature Extraction
-- **System Calls**: Frequency and sequence analysis
-- **Process Tree**: Parent-child relationships and execution patterns
-- **Resource Usage**: CPU, memory, and I/O patterns
-- **Network Activity**: Connection patterns and data transfer metrics
+- `registry_paths.yml`: High-value registry targets to monitor
+- `process_iocs.yml`: Suspicious process indicators
+- `commandline_patterns.yml`: Suspicious command line patterns
+- `microsoft_allowlist.yml`: Microsoft-signed processes to filter out
+- `system_noise.yml`: Benign system activity patterns to ignore
 
-#### Detection Methods
-- **Supervised Classification**: Random Forest and XGBoost models
-- **Anomaly Detection**: Isolation Forest and Autoencoder-based approaches
-- **Ensemble Methods**: Stacking of multiple models for improved accuracy
+### Registry Monitoring Configuration
 
-## Performance Metrics
+The registry monitoring system tracks over 100 high-value registry keys with different risk levels:
+- Critical: System-wide startup programs, Windows logon configuration, Windows services
+- High: User-specific startup programs, shell service objects, COM class identifiers
+- Medium: Screen saver configuration, context menu handlers
 
-### Model Performance
+### Process Monitoring Configuration
 
-| Model | Accuracy | Precision | Recall | F1-Score |
-|-------|----------|-----------|--------|----------|
-| CAPE Classifier | 98.7% | 97.2% | 98.1% | 97.6% |
-| Behavior Classifier | 95.3% | 94.8% | 95.1% | 94.9% |
-| Anomaly Detector | 92.1% (AUC) | 89.5% | 88.7% | 89.1% |
+Process monitoring uses pattern-based detection for suspicious processes:
+- Suspicious process names and behaviors
+- Command-line pattern matching
+- Parent-child process relationships
 
-### Resource Utilization
+## Data Sources
 
-| Component | CPU Usage | Memory Usage | Disk I/O |
-|-----------|-----------|--------------|----------|
-| Core Monitor | < 2% | ~200MB | Low |
-| ML Inference | 5-15% | 1-2GB | Medium |
-| Model Training | 80-100% | 8-16GB | High |
+### Threat Intelligence Feeds
+The system processes RSS feeds from leading security sources:
+- Malwarebytes Blog
+- CrowdStrike Blog
+- Krebs on Security
+- Threatpost
+- BleepingComputer
+- CISA Alerts
+- CERT-EU
 
-### Scalability
-- Supports monitoring of 1000+ concurrent processes
-- Distributed deployment across multiple nodes
-- Horizontal scaling for high-availability configurations
+### Dataset Integration
+The system incorporates the Avast CTU CAPEv2 dataset to enhance AI analysis with real malware behavior examples. This dataset provides context for the AI to better identify potential threats.
 
-## Post-Incident Investigation Tools
+The dataset is used to initialize the RAG pipeline with examples of:
+- Registry modifications
+- File access patterns
+- Mutex creation
+- Service creation
+- Command execution
+- Process creation
+- Network connections
+- File operations (write, delete, read)
 
-The system includes several tools for digital forensics and incident response (DFIR) to analyze security incidents:
+## System Requirements
 
-### 1. Memory Forensics
-- **Memory Capture**: Captures system memory dumps for analysis
-  - Windows: Uses DumpIt (when available)
-  - Linux: Uses dd command on /dev/mem
-- **AI Analysis**: Analyzes first 2KB of hex data with Mistral 7B
+- **Operating System**: Windows 10/11 (64-bit)
+- **Python Version**: 3.8 or higher
+- **RAM**: 8GB minimum (16GB recommended)
+- **Storage**: 500MB available space (1GB recommended for datasets)
+- **Administrator Privileges**: Required for full functionality
 
-### 2. Disk Forensics
-- **File System Analysis**:
-  - Timeline generation of file system activities
-  - Deleted file recovery
-  - File signature analysis
-  - Registry analysis (Windows)
-- **Artifact Analysis**:
-  - Prefetch files
-  - Event logs
-  - Browser history
-  - Jump lists
+## Dependencies
 
-### 3. Network Forensics
-- **PCAP Analysis**:
-  - Protocol analysis
-  - Payload inspection
-  - Session reconstruction
-- **NetFlow Analysis**:
-  - Traffic pattern analysis
-  - Anomaly detection
-  - IOC matching
+Key dependencies include:
+- `psutil`: System and process utilities
+- `wmi`: Windows Management Instrumentation
+- `ollama`: AI model interface
+- `PyYAML`: Configuration file handling
+- `feedparser`: RSS feed processing
+- `torch`: Machine learning framework
+- `transformers`: NLP models
+- `scikit-learn`: Machine learning algorithms
+- `pefile`: PE file analysis
+- `python-magic`: File type detection
+- `py7zr`: 7z archive support
+- `rarfile`: RAR archive support
 
-### 4. Process Analysis
-- **Process Dump Analysis**:
-  - Memory region inspection
-  - String extraction
-  - API call tracing
-- **Behavioral Analysis**:
-  - Process injection detection
-  - Code injection analysis
-  - API hooking detection
+See [requirements.txt](requirements.txt) for a complete list of dependencies.
 
-### 5. Malware Analysis
-- **Static Analysis**:
-  - PE header analysis
-  - Import/Export table inspection
-  - String extraction
-  - YARA rule matching
-- **Dynamic Analysis**:
-  - API monitoring
-  - Registry monitoring
-  - File system monitoring
-  - Network traffic capture
+## Security Features
 
-### 6. Log Analysis
-- **Centralized Logging**:
-  - Syslog aggregation
-  - Windows Event Log parsing
-  - Custom log parsing
-- **Correlation Engine**:
-  - Time-based event correlation
-  - Pattern matching
-  - Anomaly detection
+### Real-Time Monitoring
+- Event-driven monitoring instead of polling for better performance
+- Comprehensive metadata collection including process information, binary hashes, and user context
+- Wow64 detection for 32/64-bit registry hive monitoring
+- Monotonic event IDs for tracking
+- Complete telemetry schema with all required metadata
 
-### 7. Timeline Generation
-- **Event Correlation**:
-  - System events
-  - Network events
-  - Process events
-  - File system events
-- **Visualization**:
-  - Interactive timeline
-  - Event filtering
-  - Tagging and annotation
+### Advanced Filtering
+- Microsoft allowlists to reduce false positives
+- Pattern-based filtering for processes, paths, and command lines
+- System noise filtering to focus on relevant events
+- Adaptive thresholds based on file characteristics
+
+### Automated Response
+- AI-powered risk scoring for detected threats
+- Confidence-based decision making
+- Detailed reporting with actionable recommendations
+- Popup alerts for critical security events
+- Structured logging for forensic analysis
+
+### Threat Intelligence Integration
+- Automatic configuration updates based on latest threat intelligence
+- Deduplication of processed articles
+- Application removal suggestions based on security threats
+- Scheduled intelligence updates every 6 hours
 
 ## Development
 
-### Testing
-```bash
-# Run unit tests
-pytest tests/
-
-# Run integration tests
-pytest tests/integration/
-
-# Generate coverage report
-pytest --cov=guardrail tests/
+### Project Structure
+```
+guardrail_system/
+├── ai/                 # AI analysis modules
+│   ├── mistral_analysis.py      # Core AI analysis engine
+│   ├── risk_scoring.py          # Registry event risk scoring
+│   └── static_analyzer.py       # Static file analysis
+├── config/             # Configuration files
+├── dataset/            # Security datasets
+├── monitor/            # System monitoring agents
+│   ├── process_monitor.py       # Process monitoring
+│   ├── registry_monitor.py      # Registry monitoring
+│   ├── settings_monitor.py      # System settings monitoring
+│   └── advanced_archive_scanner.py  # Archive file analysis
+├── registry/           # Registry monitoring components
+│   ├── config/                  # Registry monitoring configuration
+│   ├── etw_registry_monitor.py  # ETW-based registry monitoring
+│   ├── threat_intel_analyzer.py # Threat intelligence processing
+│   └── threat_intel_scheduler.py # Threat intelligence scheduling
+├── utils/              # Utility functions
+├── main.py             # Main application
+├── requirements.txt    # Python dependencies
+└── README.md           # This file
 ```
 
-### Code Style
-- Follow PEP 8 guidelines
-- Type hints required for all function signatures
-- Docstrings following Google style guide
-- Maximum line length: 100 characters
+### Adding New Features
+1. Extend detection logic by modifying YAML configuration files
+2. Add new RSS feeds to threat intelligence modules
+3. Implement new monitoring agents in the [monitor/](monitor/) directory
+4. Enhance AI analysis by updating prompts in the [ai/](ai/) modules
+5. Add new registry paths to monitor in [registry/config/registry_paths.yml](registry/config/registry_paths.yml)
 
-### CI/CD Pipeline
-- Automated testing on push/PR
-- Model validation before deployment
-- Containerized deployment with Docker
-- Kubernetes manifests for orchestration
+### Configuration Files
+- `registry_paths.yml`: Registry keys to monitor with risk levels and descriptions
+- `process_iocs.yml`: Suspicious process indicators with tags and descriptions
+- `commandline_patterns.yml`: Suspicious command line patterns with categorization
+- `microsoft_allowlist.yml`: Microsoft-signed processes to filter out system noise
+- `system_noise.yml`: Benign system activity patterns to ignore
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a pull request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Mistral AI for the Mistral 7B model
+- Ollama for the local AI deployment solution
+- Avast for the CTU CAPEv2 dataset
+- The security research community for threat intelligence feeds
