@@ -80,17 +80,23 @@ def analyze_memory_dump(dump_path):
 
         # Read a sample of the memory dump to avoid huge prompts
         with open(dump_path, "rb") as f:
-            # Read 2KB from the beginning
-            sample_start = f.read(1024)
-            # Seek to middle and read another 1KB
+            # Read 4KB from the beginning for better coverage
+            sample_start = f.read(2048)
+            # Seek to middle and read another 2KB
             try:
                 f.seek(os.path.getsize(dump_path) // 2)
-                sample_middle = f.read(1024)
+                sample_middle = f.read(2048)
             except:
                 sample_middle = b""
+            # Seek to end and read another 2KB
+            try:
+                f.seek(max(0, os.path.getsize(dump_path) - 2048))
+                sample_end = f.read(2048)
+            except:
+                sample_end = b""
 
         # Combine samples
-        sample = sample_start + sample_middle
+        sample = sample_start + sample_middle + sample_end
 
         prompt = f"""
 You are an AI malware forensic agent.
@@ -107,7 +113,7 @@ Analyze the following binary memory snippet and determine if it shows signs of:
 - Encrypted or encoded payloads
 
 Memory Snapshot (hex view):
-{sample.hex()[:2000]}
+{sample.hex()[:4000]}
 
 Respond ONLY in this strict JSON format:
 {{
