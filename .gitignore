@@ -3,6 +3,56 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Virtual environments
+venv/
+venv*/
+venv310/
+env/
+env*/
+
+# Log files
+*.log
+logs/
+!logs/.gitkeep
+
+# MLflow data
+mlruns/
+mlflow/
+
+# Models
+models/
+!models/.gitkeep
+
+# Memory dumps
+*.pkl
+*.pickle
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+Thumbs.db
+.DS_Store
+
+# Credential files
+*.env
+.env*
+
+# Data files
+data/
+!data/.gitkeep
+
+# Test files directory
+test_files/
+!test_files/.gitkeep
+
+# MLflow tracking
+runs/
+!runs/.gitkeep
+
 # C extensions
 *.so
 
