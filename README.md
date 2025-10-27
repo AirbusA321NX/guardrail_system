@@ -108,7 +108,9 @@ graph LR
     E --> E4[Report Generation]
 ```
 
-## Dashboard Preview
+## Dashboard Overview
+
+The Guardrail System features a comprehensive graphical dashboard built with Tkinter that provides real-time system monitoring and module control:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -116,26 +118,54 @@ graph LR
 ├─────────────────────────────────────────────────────────────┤
 │ STATUS: ACTIVE        AI ENGINE: ONLINE        RSS FEEDS: 7 │
 ├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  [■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■] CPU: 24%       │
-│  [■■■■■■■■■■■■■■■■■■■■                    ] RAM: 52%       │
-│  [■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■] GPU: 18%       │
-│  [■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■] TEMP: 42°C    │
-│                                                             │
+│  ┌─────────────────────────────────────────────────────────┐│
+│  │  [■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■] CPU: 24%   ││
+│  │  [■■■■■■■■■■■■■■■■■■■■                    ] RAM: 52%   ││
+│  │  [■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■] GPU: 18%   ││
+│  │  [■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■] TEMP: 42°C││
+│  └─────────────────────────────────────────────────────────┘│
 ├─────────────────────────────────────────────────────────────┤
-│ RECENT THREATS DETECTED                                     │
-│ ┌─────────────────────────────────────────────────────────┐ │
-│ │ HIGH: Registry modification in HKLM\Software\Microsoft  │ │
-│ │ MED: Suspicious process launch (powershell.exe)         │ │
-│ │ LOW: Unusual network connection from svchost.exe        │ │
-│ └─────────────────────────────────────────────────────────┘ │
+│  MODULE SELECTION MENU                                      │
+│  ┌──────────────────┐ ┌──────────────────────┐              │
+│  │ Secure Shell     │ │ App Threat Detection │              │
+│  └──────────────────┘ └──────────────────────┘              │
+│  ┌──────────────────┐ ┌──────────────────────┐              │
+│  │ Process Monitor  │ │ Registry Monitor     │              │
+│  └──────────────────┘ └──────────────────────┘              │
+│  ┌──────────────────┐ ┌──────────────────────┐              │
+│  │ Service Monitor  │ │ Memory Capture       │              │
+│  └──────────────────┘ └──────────────────────┘              │
+│  ┌──────────────────┐ ┌──────────────────────┐              │
+│  │ Archive Scanner  │ │ Settings Monitor     │              │
+│  └──────────────────┘ └──────────────────────┘              │
 ├─────────────────────────────────────────────────────────────┤
-│ THREAT INTELLIGENCE UPDATES                                 │
-│ Last Update: 2 hours ago                                    │
-│ Next Update: 4 hours                                        │
-│ Articles Processed Today: 24                                │
+│  ┌─────────────────────────────────────────────────────────┐│
+│  │      [ START WHOLE GUARDRAIL SYSTEM BUTTON ]            ││
+│  └─────────────────────────────────────────────────────────┘│
 └─────────────────────────────────────────────────────────────┘
 ```
+
+### Dashboard Features
+
+1. **System Status Indicators**:
+   - Ollama service status with blinking animation
+   - Real-time system metrics display
+
+2. **Resource Monitoring**:
+   - Circular gauges for RAM and storage utilization
+   - Horizontal progress bars for CPU and GPU usage
+   - Temperature monitoring for CPU and GPU
+   - Color-coded indicators based on usage levels
+
+3. **Module Control**:
+   - Grid-based module selection interface
+   - Dedicated buttons for each security module
+   - Single button to start the entire system
+
+4. **Visual Design**:
+   - Dark theme interface for reduced eye strain
+   - Color-coded progress indicators (green <50%, blue 50-80%, red >80%)
+   - Responsive layout that adapts to window size
 
 ## Installation
 
