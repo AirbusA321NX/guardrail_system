@@ -19,9 +19,16 @@ logs/
 mlruns/
 mlflow/
 
-# Models
-models/
-!models/.gitkeep
+# Models (excluding config files)
+models/*/
+!models/**/config.json
+!models/**/tokenizer_config.json
+!models/**/special_tokens_map.json
+!models/**/vocab.txt
+!models/**/merges.txt
+!models/**/label_mappings.json
+!models/**/label2id.json
+!models/**/id2label.json
 
 # Memory dumps
 *.pkl
@@ -256,3 +263,9 @@ htmlcov/
 *.der
 secrets.json
 credentials.json
+
+# Large model files
+*.safetensors
+*.bin
+*.pt
+*.h5
