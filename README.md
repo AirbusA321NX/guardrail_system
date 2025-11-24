@@ -24,7 +24,7 @@ The system uses the Mistral 7B model via Ollama for intelligent threat analysis,
 - AI risk scoring for registry events with explainability
 
 ### Multi-Layered Monitoring
-- **Registry Monitoring**: Real-time monitoring of registry changes using ETW (Event Tracing for Windows)
+- **Registry Monitoring**: Real-time monitoring of registry changes using ETW (Event Tracing for Windows) with application-based grouping
 - **Process Monitoring**: Tracks running processes and identifies suspicious behavior
 - **Service Monitoring**: Monitors system services for unauthorized changes
 - **File System Scanning**: Scans files and directories for potential threats
@@ -37,12 +37,20 @@ The system uses the Mistral 7B model via Ollama for intelligent threat analysis,
 - Deduplicates processed articles to avoid redundant analysis
 - Generates actionable reports with confidence scoring
 - Suggests applications for removal based on security threats
+- Integrates with application threat analyzer for real-time dangerous app detection
 
 ### Real-Time System Metrics
 - CPU/GPU usage monitoring with visual indicators
 - Temperature monitoring for system health
 - RAM and storage utilization tracking
 - Ollama service status monitoring with visual feedback
+
+### Enhanced Registry Monitoring
+- Groups registry events by actual installed applications using dynamic registry scanning
+- Uses Windows Management Instrumentation (WMI) and PowerShell for comprehensive app detection
+- Implements real process information retrieval using NtQueryInformationProcess
+- Provides detailed telemetry with complete metadata including command lines and parent process IDs
+- Integrates with application threat analyzer for dangerous app detection and removal
 
 ## System Architecture
 
@@ -60,6 +68,7 @@ graph TD
     C --> C1[RSS Feed Processor]
     C --> C2[Threat Intel Scheduler]
     C --> C3[Report Generator]
+    C --> C4[App Threat Analyzer]
     
     D --> D1[Registry Monitor]
     D --> D2[Process Monitor]
@@ -77,11 +86,12 @@ graph TD
 
 1. **Main Application** ([main.py](main.py)): Central UI and system coordinator
 2. **AI Engine** ([ai/](ai/)): Mistral 7B integration with RAG pipeline
-3. **Registry Monitoring** ([registry/](registry/)): ETW-based registry change detection
+3. **Registry Monitoring** ([registry/](registry/)): ETW-based registry change detection with application grouping
 4. **Process Monitoring** ([monitor/process_monitor.py](monitor/process_monitor.py)): Real-time process tracking
 5. **Service Monitoring** ([service_monitor.py](service_monitor.py)): System service surveillance
 6. **File Analysis** ([system_scan.py](system_scan.py), [advanced_archive_scanner.py](advanced_archive_scanner.py)): Comprehensive file scanning
 7. **Settings Monitoring** ([monitor/settings_monitor.py](monitor/settings_monitor.py)): Critical system settings surveillance
+8. **App Threat Detection** ([registry/app_threat_analyzer.py](registry/app_threat_analyzer.py)): Application threat analysis and removal
 
 ## Data Flow Diagram
 
@@ -101,6 +111,7 @@ graph LR
     C --> C1[Threat Intelligence Analysis]
     C --> C2[Behavioral Analysis]
     C --> C3[Pattern Matching]
+    C --> C4[App Threat Analysis]
     
     D --> D1[Mistral 7B AI]
     D --> D2[Risk Scoring]
@@ -110,6 +121,7 @@ graph LR
     E --> E2[Process Termination]
     E --> E3[Registry Rollback]
     E --> E4[Report Generation]
+    E --> E5[App Removal]
 ```
 
 ## Dashboard Overview
@@ -368,6 +380,12 @@ See [requirements.txt](requirements.txt) for a complete list of dependencies.
 - Application removal suggestions based on security threats
 - Scheduled intelligence updates every 6 hours
 
+### Enhanced Application Threat Detection
+- Dynamic registry application detection using get_app_registry.py
+- Real-time dangerous application identification and user prompts
+- Automated application removal using multiple strategies (WMI, PowerShell, registry cleanup)
+- Integration with threat intelligence feeds for up-to-date threat information
+
 ## Development
 
 ### Project Structure
@@ -387,6 +405,7 @@ guardrail_system/
 ├── registry/           # Registry monitoring components
 │   ├── config/                  # Registry monitoring configuration
 │   ├── etw_registry_monitor.py  # ETW-based registry monitoring
+│   ├── get_app_registry.py      # Application registry detection
 │   ├── threat_intel_analyzer.py # Threat intelligence processing
 │   └── threat_intel_scheduler.py # Threat intelligence scheduling
 ├── utils/              # Utility functions
