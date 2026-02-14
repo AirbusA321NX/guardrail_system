@@ -3,6 +3,7 @@
 ![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-windows--64--bit-lightgrey.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Ollama](https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white)
 
 A comprehensive security monitoring and threat detection platform that leverages AI-powered analysis to identify and respond to potential security threats in real-time.
 
