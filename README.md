@@ -350,7 +350,7 @@ See [requirements.txt](requirements.txt) for a complete list of dependencies.
 - Complete telemetry schema with all required metadata
 
 #### Registry Monitoring Workflow
-```
+```mermaid 
 graph TD
     A[ETW Registry Events] --> B[Event Collection]
     B --> C[Process Metadata Enrichment]
